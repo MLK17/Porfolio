@@ -1,0 +1,13 @@
+/* Styles globaux de l'application */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background: #202020;
+}
+
+/* Ajoutez d'autres styles globaux si nécessaire */
