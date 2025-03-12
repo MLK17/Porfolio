@@ -1,123 +1,408 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Footer from '../components/Footer'
+import React, { useState, useEffect } from 'react'
+import { StyledContent, CardContainer, StyledCard } from '../components/ui/Cards'
+import { GraduationCap, Building2, Award, FolderKanban, Code2, Server } from 'lucide-react'
 
 export default function BtsSio() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
-    <Layout>
+    <StyledContent>
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '2rem',
-        padding: '2rem'
+        gap: isMobile ? '1rem' : '1.95rem',
+        width: '100%',
+        height: '100%',
+        maxWidth: '1600px',
+        margin: '0 auto',
+        paddingBottom: isMobile ? '4rem' : '8rem',
       }}>
-        {/* Section principale */}
-        <section style={{
-          background: 'rgba(0, 0, 0, 0.8)',
-          padding: '2rem',
-          borderRadius: '12px',
-          boxShadow: '0 0 20px rgba(0, 255, 0, 0.1)'
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '100%',
+          maxWidth: '1000px',
+          margin: '0 auto',
+          paddingTop: isMobile ? '2rem' : '4rem',
         }}>
-          <h2 style={{ 
-            color: '#00ff00',
-            marginBottom: '1rem',
-            textShadow: '0 0 10px rgba(0, 255, 0, 0.3)'
+          <CardContainer style={{ 
+            flex: 1,
+            maxWidth: '1000px',
+            minWidth: isMobile ? '300px' : '400px',
+            height: 'min(180px, 28vh)',
           }}>
-            Qu'est ce que le BTS SIO ?
-          </h2>
-          <p style={{ color: '#00ff00', lineHeight: '1.6' }}>
-            Le brevet de technicien supérieur aux services informatique aux organisations. 
-            Une durée de deux ans qui forme aux métiers d'administrateur réseau ou de développeur. 
-            Notamment peuvent continuer les études supérieur ou intégrer le monde du travail.
-          </p>
-          <p style={{ color: '#00ff00', lineHeight: '1.6', marginTop: '1rem' }}>
-            Le BTS SIO offre deux spécialités SISR ou SLAM
-          </p>
-          <div style={{ marginTop: '1rem' }}>
-            <h3 style={{ color: '#00ff00', marginBottom: '0.5rem' }}>SISR</h3>
-            <p style={{ color: '#00ff00', lineHeight: '1.6' }}>
-              SISR signifie Solutions d'infrastructures, systèmes et réseaux. La spécialisation SISR 
-              du BTS SIO permet d'apprendre un métier qui consiste à installer, configurer et gérer 
-              les équipements et les réseaux informatiques.
-            </p>
-          </div>
-          <div style={{ marginTop: '1rem' }}>
-            <h3 style={{ color: '#00ff00', marginBottom: '0.5rem' }}>SLAM</h3>
-            <p style={{ color: '#00ff00', lineHeight: '1.6' }}>
-              SLAM signifie Solutions Logicielles et Application Métier. La spécialisation SLAM est 
-              plus orientée Développement. Elle permet d'apprendre à réaliser des logiciels, sites 
-              webs, applications mobiles, mais aussi de rédiger des documentations techniques.
-            </p>
-          </div>
-        </section>
+            <StyledCard style={{ 
+              padding: 0,
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.8rem',
+                alignItems: 'center',
+                width: '100%',
+              }}>
+                <h2 style={{ 
+                  color: 'white',
+                  margin: 0,
+                  fontSize: isMobile ? '1.2rem' : '1.4rem',
+                  textAlign: 'center',
+                  borderBottom: '1px solid rgba(255,255,255,0.1)',
+                  padding: isMobile ? '0.8rem' : '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '90%',
+                  margin: '0 auto',
+                  gap: '0.5rem'
+                }}>
+                  BTS Service Informatique aux Organisations
+                </h2>
+                <p style={{ 
+                  color: 'white',
+                  lineHeight: '1.5',
+                  fontSize: isMobile ? '0.8rem' : '0.9rem',
+                  textAlign: 'center',
+                  maxWidth: '800px',
+                  paddingBottom: isMobile ? '0.8rem' : '1rem',
+                }}>
+                  Le BTS SIO forme des professionnels capables de répondre aux besoins informatiques des organisations en développant des solutions logicielles ou en administrant des systèmes et réseaux.
+                </p>
+              </div>
+            </StyledCard>
+          </CardContainer>
+        </div>
 
         <div style={{
           display: 'flex',
-          gap: '2rem',
-          justifyContent: 'space-between'
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: isMobile ? '1rem' : '2.5rem',
+          justifyContent: 'center',
+          alignItems: isMobile ? 'stretch' : 'center',
+          width: '100%',
+          maxWidth: '1000px',
+          margin: '0 auto',
+          boxShadow: 'none',
         }}>
-          {/* Méthodes et techniques */}
-          <section style={{
-            flex: 1,
-            background: 'rgba(0, 0, 0, 0.8)',
-            padding: '2rem',
-            borderRadius: '12px',
-            boxShadow: '0 0 20px rgba(0, 255, 0, 0.1)'
-          }}>
-            <h2 style={{ 
-              color: '#00ff00',
-              marginBottom: '1rem',
-              textShadow: '0 0 10px rgba(0, 255, 0, 0.3)'
+          {[1, 2, 3, 4].map((index) => (
+            <CardContainer key={index} style={{ 
+              flex: isMobile ? 'none' : 1,
+              width: isMobile ? '100%' : 'auto',
+              maxWidth: isMobile ? '100%' : '220px',
+              minWidth: isMobile ? '0' : '220px',
+              height: isMobile ? '160px' : '220px',
+              backdropFilter: 'blur(2px)',
             }}>
-              Méthodes et techniques informatiques
-            </h2>
-            <ul style={{ 
-              color: '#00ff00',
-              listStyle: 'none',
-              padding: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.5rem'
-            }}>
-              <li>Bloc 1 – Support et mise à disposition de services informatiques</li>
-              <li>Bloc 2 – Option SISR – Administration des systèmes et des réseaux</li>
-              <li>Bloc 2 – Option SLAM – Conception et développement d'applications</li>
-              <li>Bloc 3 - Cybersécurité des services informatiques</li>
-            </ul>
-          </section>
+              <StyledCard style={{ 
+                padding: isMobile ? '0.8rem' : '1rem',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: isMobile ? '0.5rem' : '1rem',
+                textAlign: 'center',
+              }}>
+                {index === 1 ? (
+                  <>
+                    <GraduationCap 
+                      size={isMobile ? 28 : 32}
+                      color="white"
+                      style={{ marginBottom: isMobile ? '0.3rem' : '0.5rem' }}
+                    />
+                    <h3 style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '1.1rem' : '1.3rem',
+                      marginBottom: isMobile ? '0.3rem' : '0.5rem',
+                    }}>
+                      Formation
+                    </h3>
+                    <p style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '0.8rem' : '0.9rem',
+                      opacity: 0.9,
+                      lineHeight: '1.4',
+                    }}>
+                      Formation sur 2 ans avec alternance possible
+                    </p>
+                  </>
+                ) : index === 2 ? (
+                  <>
+                    <Building2 
+                      size={isMobile ? 28 : 32}
+                      color="white"
+                      style={{ marginBottom: isMobile ? '0.3rem' : '0.5rem' }}
+                    />
+                    <h3 style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '1.1rem' : '1.3rem',
+                      marginBottom: isMobile ? '0.3rem' : '0.5rem',
+                    }}>
+                      Alternance
+                    </h3>
+                    <p style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '0.8rem' : '0.9rem',
+                      opacity: 0.9,
+                      lineHeight: '1.4',
+                    }}>
+                      24 mois en entreprise au rythme de 3 jours par semaine
+                    </p>
+                  </>
+                ) : index === 3 ? (
+                  <>
+                    <Award 
+                      size={isMobile ? 28 : 32}
+                      color="white"
+                      style={{ marginBottom: isMobile ? '0.3rem' : '0.5rem' }}
+                    />
+                    <h3 style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '1.1rem' : '1.3rem',
+                      marginBottom: isMobile ? '0.3rem' : '0.5rem',
+                    }}>
+                      Certification
+                    </h3>
+                    <p style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '0.8rem' : '0.9rem',
+                      opacity: 0.9,
+                      lineHeight: '1.4',
+                    }}>
+                      Diplôme d'État de niveau Bac+2
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <FolderKanban 
+                      size={isMobile ? 28 : 32}
+                      color="white"
+                      style={{ marginBottom: isMobile ? '0.3rem' : '0.5rem' }}
+                    />
+                    <h3 style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '1.1rem' : '1.3rem',
+                      marginBottom: isMobile ? '0.3rem' : '0.5rem',
+                    }}>
+                      Projets
+                    </h3>
+                    <p style={{ 
+                      color: 'white',
+                      fontSize: isMobile ? '0.8rem' : '0.9rem',
+                      opacity: 0.9,
+                      lineHeight: '1.4',
+                    }}>
+                      Projets pratiques et études de cas réels
+                    </p>
+                  </>
+                )}
+              </StyledCard>
+            </CardContainer>
+          ))}
+        </div>
 
-          {/* Matières enseignées */}
-          <section style={{
+        <div style={{
+          display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: isMobile ? '1rem' : '2.5rem',
+          justifyContent: 'center',
+          width: '100%',
+          maxWidth: '1000px',
+          margin: '0 auto',
+        }}>
+          <CardContainer style={{ 
             flex: 1,
-            background: 'rgba(0, 0, 0, 0.8)',
-            padding: '2rem',
-            borderRadius: '12px',
-            boxShadow: '0 0 20px rgba(0, 255, 0, 0.1)'
+            maxWidth: isMobile ? '100%' : '490px',
+            minHeight: isMobile ? 'auto' : '520px',
           }}>
-            <h2 style={{ 
-              color: '#00ff00',
-              marginBottom: '1rem',
-              textShadow: '0 0 10px rgba(0, 255, 0, 0.3)'
+            <StyledCard style={{ 
+              padding: '1.5rem',
+              height: '100%',
             }}>
-              Les matières enseignées
-            </h2>
-            <ul style={{ 
-              color: '#00ff00',
-              listStyle: 'none',
-              padding: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.5rem'
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', backgroundColor: 'rgba(20, 20, 20, 0.8)', borderRadius: '10px',padding: '1rem' }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                    <Code2 size={28} color="white" />
+                    <h2 style={{ color: 'white', margin: 0, fontSize: '1.4rem', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', width: '90%', margin: '0 auto', gap: '0.5rem' }}>
+                      SLAM
+                    </h2>
+                  </div>
+                  <h3 style={{ 
+                    color: 'white',
+                    marginBottom: '0.5rem',
+                    fontSize: '1rem',
+                    opacity: 0.9,
+                  }}>
+                    Solutions Logicielles et Applications Métiers
+                  </h3>
+
+                  <p style={{ 
+                    color: 'white',
+                    fontSize: '0.8rem',
+                    opacity: 0.9,
+                  }}>
+                    Spécialisation dans le développement d'applications et la programmation
+                  </p>
+                </div>
+
+                <div>
+                  <h3 style={{ 
+                    color: 'white',
+                    marginBottom: '0.5rem',
+                    fontSize: '1rem',
+                  }}>
+                    Compétences clés :
+                  </h3>
+                  <ul style={{ 
+                    color: 'white',
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0,
+                    fontSize: '0.8rem',
+                    opacity: 0.9,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem',
+                  }}>
+                    <li>• Développement d'applications</li>
+                    <li>• Programmation orientée objet</li>
+                    <li>• Développement web</li>
+                    <li>• Bases de données</li>
+                    <li>• Cybersécurité</li>
+                  </ul>
+                </div>  
+
+                <div>
+                  <h3 style={{ 
+                    color: 'white',
+                    marginBottom: '0.5rem',
+                    fontSize: '1rem',
+                  }}>
+                    Débouchés :
+                  </h3>
+                  <ul style={{ 
+                    color: 'white',
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0,
+                    fontSize: '0.8rem',
+                    opacity: 0.9,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem',
+                  }}>
+                    <li>• Développeur d'applications</li>
+                    <li>• Développeur web</li>
+                    <li>• Analyste programmeur</li>
+                    <li>• Développeur full-stack</li>
+                  </ul>
+                </div>
+              </div>
+            </StyledCard>
+          </CardContainer>
+
+          <CardContainer style={{ 
+            flex: 1,
+            maxWidth: isMobile ? '100%' : '490px',
+            minHeight: isMobile ? 'auto' : '520px',
+          }}>
+            <StyledCard style={{ 
+              padding: '1.5rem',
+              height: '100%',
             }}>
-              <li>Culture Générale et expression</li>
-              <li>Expression et communication en langue anglaise</li>
-              <li>Mathématiques pour l'informatique et Algorithmique appliquée</li>
-              <li>Culture Economique Juridique et Managériale</li>
-            </ul>
-          </section>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', backgroundColor: 'rgba(20, 20, 20, 0.8)', borderRadius: '10px',padding: '1rem' }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                    <Server size={28} color="white" />
+                    <h2 style={{ color: 'white', margin: 0, fontSize: '1.4rem', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', width: '90%', margin: '0 auto', gap: '0.5rem' }}>
+                      SISR
+                    </h2>
+                  </div>
+                  <h3 style={{ 
+                    color: 'white',
+                    marginBottom: '0.5rem',
+                    fontSize: '1rem',
+                    opacity: 0.9,
+                  }}>
+                    Solutions d'Infrastructure, Systèmes et Réseaux
+                  </h3>
+
+                  <p style={{ 
+                    color: 'white',
+                    fontSize: '0.8rem',
+                    opacity: 0.9,
+                  }}>
+                    Spécialisation dans l'administration des systèmes et des réseaux
+                  </p>
+                </div>
+
+                <div>
+                  <h3 style={{ 
+                    color: 'white',
+                    marginBottom: '0.5rem',
+                    fontSize: '1rem',
+                  }}>
+                    Compétences clés :
+                  </h3>
+                  <ul style={{ 
+                    color: 'white',
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0,
+                    fontSize: '0.8rem',
+                    opacity: 0.9,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem',
+                  }}>
+                    <li>• Administration systèmes</li>
+                    <li>• Configuration réseaux</li>
+                    <li>• Sécurité informatique</li>
+                    <li>• Virtualisation</li>
+                    <li>• Services Cloud</li>
+                  </ul>
+                </div>  
+
+                <div>
+                  <h3 style={{ 
+                    color: 'white',
+                    marginBottom: '0.5rem',
+                    fontSize: '1rem',
+                  }}>
+                    Débouchés :
+                  </h3>
+                  <ul style={{ 
+                    color: 'white',
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0,
+                    fontSize: '0.8rem',
+                    opacity: 0.9,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem',
+                  }}>
+                    <li>• Administrateur systèmes</li>
+                    <li>• Technicien réseaux</li>
+                    <li>• Responsable infrastructure</li>
+                    <li>• Technicien support</li>
+                  </ul>
+                </div>
+              </div>
+            </StyledCard>
+          </CardContainer>
         </div>
       </div>
-      <Footer />
-    </Layout>
+    </StyledContent>
   )
-} 
+}

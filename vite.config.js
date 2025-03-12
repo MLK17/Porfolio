@@ -4,16 +4,17 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    include: ['bootstrap'],
+    include: [],
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "bootstrap/scss/bootstrap";`
+        additionalData: ``
       }
     }
   },
   define: {
     'process.env': process.env
-  }
+  },
+  assetsInclude: ['**/*.pdf']
 }) 

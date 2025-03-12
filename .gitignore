@@ -11,6 +11,15 @@ build/
 src/assets/*
 !src/assets/.gitkeep
 
+# Public assets
+public/Document/*
+public/favico/*
+public/images/*
+!public/Document/.gitkeep
+!public/favico/.gitkeep
+!public/images/.gitkeep
+public/BTS-SIO-Tableau-de-synthese.pdf
+
 # Environment files
 .env
 .env.local

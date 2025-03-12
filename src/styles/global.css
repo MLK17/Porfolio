@@ -1,13 +1,46 @@
-/* Styles globaux de l'application */
+/* Import de la police Oswald */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* Reset et styles de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: 'IBM Plex Mono', monospace;
-  background: #202020;
+  background: transparent !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ajoutez d'autres styles globaux si nécessaire */
+/* Assurer que tous les éléments scrollables n'affichent pas de barre */
+div, section, article, aside, nav, main {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+div::-webkit-scrollbar,
+section::-webkit-scrollbar,
+article::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+nav::-webkit-scrollbar,
+main::-webkit-scrollbar {
+  display: none;
+}
