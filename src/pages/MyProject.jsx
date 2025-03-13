@@ -123,7 +123,7 @@ export default function Projects() {
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.5rem',
+                gap: '0.2rem',
                 position: 'relative',
               }}>
                 {/* En-tête de la carte */}
@@ -167,6 +167,8 @@ export default function Projects() {
                   backgroundColor: 'rgb(13, 13, 13)',
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
+      
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
@@ -229,6 +231,7 @@ export default function Projects() {
                   backgroundColor: 'rgb(13, 13, 13)',
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
@@ -302,6 +305,7 @@ export default function Projects() {
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
                   border: '2px solid rgba(255,255,255,1)',
+                  marginBottom: '1rem',
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
@@ -375,6 +379,7 @@ export default function Projects() {
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
                   border: '2px solid rgba(255,255,255,1)',
+                  marginBottom: '1rem',
                 
                 }}>
                   <h3 style={{ 
@@ -438,6 +443,7 @@ export default function Projects() {
                   backgroundColor: 'rgb(13, 13, 13)',
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
@@ -507,6 +513,7 @@ export default function Projects() {
                   backgroundColor: 'rgb(13, 13, 13)',
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
@@ -587,7 +594,7 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.5rem',
+                gap: '0.2rem',
                 position: 'relative',
               }}>
                 <div style={{
@@ -630,6 +637,7 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                   backgroundColor: 'rgb(13, 13, 13)',
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
@@ -701,6 +709,7 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                   backgroundColor: 'rgb(13, 13, 13)',
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
                 }}>
                   <h3 style={{ 
                     fontSize: isMobile ? '1.3rem' : '1.5rem',
