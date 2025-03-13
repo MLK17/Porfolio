@@ -223,10 +223,10 @@ export default function BtsSio() {
           <CardContainer style={{ 
             flex: 1,
             maxWidth: isMobile ? '100%' : '490px',
-            minHeight: isMobile ? 'auto' : '520px',
+            maxHeight: isMobile ? 'auto' : '470px',
           }}>
             <StyledCard style={{ 
-              padding: '1.5rem',
+              padding: '1rem',
               height: '100%',
             }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', backgroundColor: 'rgba(20, 20, 20, 0.8)', borderRadius: '10px',padding: '1rem' }}>
@@ -314,10 +314,10 @@ export default function BtsSio() {
           <CardContainer style={{ 
             flex: 1,
             maxWidth: isMobile ? '100%' : '490px',
-            minHeight: isMobile ? 'auto' : '520px',
+            maxHeight: isMobile ? 'auto' : '470px',
           }}>
             <StyledCard style={{ 
-              padding: '1.5rem',
+              padding: '1rem',
               height: '100%',
             }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', backgroundColor: 'rgba(20, 20, 20, 0.8)', borderRadius: '10px',padding: '1rem' }}>

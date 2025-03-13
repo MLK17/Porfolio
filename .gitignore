@@ -7,9 +7,6 @@ node_modules/
 dist/
 build/
 
-# Assets
-src/assets/*
-!src/assets/.gitkeep
 
 # Public assets
 public/Document/*

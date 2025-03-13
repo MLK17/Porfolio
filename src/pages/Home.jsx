@@ -5,7 +5,7 @@ import { GraduationCap, Award, Briefcase, FileText } from 'lucide-react'
 
 export default function Home() {
   const setImageError = useState(false)
-  const cvUrl = '/documents/CV-Melchior-Arrouche.pdf'
+  const cvUrl = '/CV Arrouche Melchior.pdf'
   const newLocal = "CV-Melchior-Arrouche.pdf";
   
   const [isMobile, setIsMobile] = useState(false);

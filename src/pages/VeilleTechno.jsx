@@ -92,7 +92,26 @@ export default function VeilleTechno() {
   };
 
   const handleDownload = (fileType) => {
-    alert(`Le téléchargement du fichier ${fileType} sera disponible prochainement.`);
+    const fileMap = {
+      'ransomware': {
+        path: '/Document/Ransomware.pdf',
+        downloadName: 'Ransomware_Documentation.pdf'
+      },
+      'quantum': {
+        path: '/Document/Quantum.pdf',
+        downloadName: 'Quantum_Documentation.pdf'
+      }
+    };
+
+    const fileInfo = fileMap[fileType];
+    if (fileInfo) {
+      const link = document.createElement('a');
+      link.href = fileInfo.path;
+      link.download = fileInfo.downloadName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   const containerStyles = {

@@ -237,7 +237,7 @@ export default function Projects() {
                     color: 'white',
                     borderBottom: '1px solid rgba(255,255,255,0.1)',
                     paddingBottom: '0.5rem',
-                  }}>Pixel Art</h3>
+                  }}>Pixel Art Maker</h3>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
@@ -515,7 +515,7 @@ export default function Projects() {
                     color: 'white',
                     borderBottom: '1px solid rgba(255,255,255,0.1)',
                     paddingBottom: '0.5rem',
-                  }}>Ollosa</h3>
+                  }}>Olosa</h3>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
@@ -551,8 +551,8 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                           GitHub
                         </button>
                         <a 
-                          href="/Document/Ollosa.pdf"
-                          download="Ollosa_Documentation.pdf"
+                          href="/Document/Olosa.pdf"
+                          download="Olosa_Documentation.pdf"
                           style={{
                             ...buttonStyle,
                             textDecoration: 'none',
@@ -572,76 +572,6 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                   </div>
                 </div>
 
-                <div style={{
-                  backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
-                  borderRadius: '12px',
-                }}>
-                  <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
-                    margin: 0,
-                    fontWeight: '500',
-                    color: 'white',
-                    borderBottom: '1px solid rgba(255,255,255,0.1)',
-                    paddingBottom: '0.5rem',
-                  }}>Convertisseur de devises</h3>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
-                        lineHeight: '1.7',
-                        margin: '0 0 0.8rem 0',
-                        color: 'rgba(255,255,255,0.9)',
-                      }}>
-                        Application mobile de coversion deq devises 
-                      </p>
-                      <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
-                        lineHeight: '1.7',
-                        margin: '0 0 0.8rem 0',
-                        color: 'rgba(255,255,255,0.9)',
-                      }}>
-                        <u style={{ fontSize: isMobile ? '0.75rem' : '0.8rem' }}>Stack technique :</u><br />
-                        • Projet Java<br />
-                        • Utilisation d'Android Studio
-                      </p>
-                      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
-                        <button 
-                          onClick={() => window.open('#', '_blank')}
-                          style={{
-                            ...buttonStyle,
-                            fontSize: isMobile ? '0.65rem' : '0.7rem',
-                            padding: isMobile ? '0.35rem 0.6rem' : '0.4rem 0.7rem',
-                            '&:hover': {
-                              backgroundColor: 'rgba(25, 25, 25, 0.9)',
-                              transform: 'translateY(-2px)',
-                            }
-                          }}
-                        >
-                          <FolderGit2 size={14} />
-                          GitHub
-                        </button>
-                        <a 
-                          href="/Document/ConvertisseurDevises.pdf"
-                          download="ConvertisseurDevises_Documentation.pdf"
-                          style={{
-                            ...buttonStyle,
-                            textDecoration: 'none',
-                            fontSize: isMobile ? '0.65rem' : '0.7rem',
-                            padding: isMobile ? '0.35rem 0.6rem' : '0.4rem 0.7rem',
-                            '&:hover': {
-                              backgroundColor: 'rgba(25, 25, 25, 0.9)',
-                              transform: 'translateY(-2px)',
-                            }
-                          }}
-                        >
-                          <Code size={14} />
-                          Documentation
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </StyledCard>
           </CardContainer>
