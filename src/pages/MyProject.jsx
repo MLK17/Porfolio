@@ -118,7 +118,7 @@ export default function Projects() {
               margin: '0 auto',
               height: '100%',
               overflow: 'auto',
-              maxHeight: isMobile ? 'none' : 'calc(85vh - 7rem)',
+              maxHeight: isMobile ? 'none' : 'calc(200vh - 30rem)',
             }}>
               <div style={{
                 display: 'flex',
@@ -390,7 +390,7 @@ export default function Projects() {
                     borderBottom: '1px solid rgba(255,255,255,0.1)',
                     paddingBottom: '0.5rem',
                     
-                  }}>SlayerGate</h3>
+                  }}>SlayerGates (client léger)</h3>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
@@ -589,7 +589,7 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
               ...scrollbarHideStyles,
               padding: isMobile ? '0 1rem 1rem 1rem' : '0 1.5rem 1.5rem 1.5rem',
               margin: '0 auto',
-              maxHeight: isMobile ? 'none' : 'calc(85vh - 7rem)',
+              maxHeight: isMobile ? 'none' : 'calc(200vh - 30rem)',
             }}>
               <div style={{
                 display: 'flex',
