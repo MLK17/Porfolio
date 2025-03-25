@@ -3,7 +3,7 @@ import { StyledContent, CardContainer, StyledCard } from '../components/ui/Cards
 import { FileText, Download, FileDown } from 'lucide-react'
 
 export default function TableauDeSynthese() {
-  const pdfUrl = "/BTS-SIO-Tableau-de-synthese.pdf"
+  const pdfUrl = "/BTS SIO-Tableau de synthèse.pdf"
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

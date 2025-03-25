@@ -314,7 +314,7 @@ export default function Projects() {
                     color: 'white',
                     borderBottom: '1px solid rgba(255,255,255,0.1)',
                     paddingBottom: '0.5rem',
-                  }}>SlayerGates (client lourd)</h3>
+                  }}>MotherGates (client lourd)</h3>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
@@ -333,12 +333,13 @@ export default function Projects() {
                         color: 'rgba(255,255,255,0.9)',
                       }}>
                         <u style={{ fontSize: isMobile ? '0.75rem' : '0.8rem' }}>Stack technique :</u><br />
-                        • Next.js + PostgreSQL<br />
-                        • Système d'authentification
+                        • Python + SQLAlchemy<br />
+                        • Interface de gestion des tournois et des matchs
+           
                       </p>
                       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
                         <button 
-                          onClick={() => window.open('#', '_blank')}
+                          onClick={() => window.open('https://github.com/MLK17/MotherGates', '_blank')}
                           style={{
                             ...buttonStyle,
                             fontSize: isMobile ? '0.65rem' : '0.7rem',
@@ -352,9 +353,8 @@ export default function Projects() {
                           <FolderGit2 size={14} />
                           GitHub
                         </button>
-                        <a 
-                          href="/Document/SlayerGates.pdf"
-                          download="SlayerGates_Documentation.pdf"
+                        <button 
+                          onClick={() => window.open('https://drive.google.com/drive/folders/1OFJwIZNVa1MxC62f0YDnJ2wDuAlUvXD8?dmr=1&ec=wgc-drive-globalnav-goto', '_blank')}
                           style={{
                             ...buttonStyle,
                             textDecoration: 'none',
@@ -368,7 +368,7 @@ export default function Projects() {
                         >
                           <Code size={14} />
                           Documentation
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -413,7 +413,7 @@ export default function Projects() {
                       </p>
                       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
                         <button 
-                          onClick={() => window.open('#', '_blank')}
+                          onClick={() => window.open('https://github.com/MLK17/SlayerGates', '_blank')}
                           style={{
                             ...buttonStyle,
                             fontSize: isMobile ? '0.65rem' : '0.7rem',
@@ -424,7 +424,7 @@ export default function Projects() {
                           GitHub
                         </button>
                         <button 
-                          onClick={() => window.open('#', '_blank')}
+                          onClick={() => window.open('https://slayergates-m0uppztkc-melkis-projects-c0ee5175.vercel.app/', '_blank')}
                           style={{
                             ...buttonStyle,
                             fontSize: isMobile ? '0.65rem' : '0.7rem',
@@ -473,7 +473,7 @@ export default function Projects() {
                       </p>
                       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: isMobile ? 'wrap' : 'nowrap' }}>
                         <button 
-                          onClick={() => window.open('https://github.com/MLK17/foot-e-commerce', '_blank')}
+                          onClick={() => window.open('https://github.com/MLK17/Gestion-Personel-Efrei', '_blank')}
                           style={{
                             ...buttonStyle,
                             fontSize: isMobile ? '0.65rem' : '0.7rem',
@@ -488,8 +488,8 @@ export default function Projects() {
                           GitHub
                         </button>
                         <a 
-                          href="/Document/EfreiScolarité.pdf"
-                          download="EfreiScolarité_Documentation.pdf"
+                          href="/Document/EfreiScolarité_Documentation.pdf"
+                          download="EfreiScolarité.pdf"
                           style={{
                             ...buttonStyle,
                             textDecoration: 'none',
