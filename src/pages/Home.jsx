@@ -9,16 +9,18 @@ export default function Home() {
   const newLocal = "CV-Melchior-Arrouche.pdf";
   
   const [isMobile, setIsMobile] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
+    const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 768);
+      setIsLargeScreen(window.innerWidth >= 1440);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   const containerStyles = {
@@ -186,9 +188,9 @@ export default function Home() {
 
   const certificationCardContainerStyles = {
     flex: 1,
-    maxWidth: '600px',
+    maxWidth: isLargeScreen ? '600px' : '700px',
     minWidth: '300px',
-    height: isMobile ? 'auto' : 'min(380px, 38vh)',
+    height: isMobile ? 'auto' : isLargeScreen ? 'min(380px, 38vh)' : 'min(450px, 45vh)',
     boxSizing: 'border-box',
   };
 
@@ -230,9 +232,9 @@ export default function Home() {
 
   const alternanceCardContainerStyles = {
     flex: 1,
-    maxWidth: '600px',
+    maxWidth: isLargeScreen ? '600px' : '700px',
     minWidth: '300px',
-    height: isMobile ? 'auto' : 'min(380px, 38vh)',
+    height: isMobile ? 'auto' : isLargeScreen ? 'min(380px, 38vh)' : 'min(450px, 45vh)',
     boxSizing: 'border-box',
   };
 
@@ -425,8 +427,8 @@ export default function Home() {
                     fontSize: isMobile ? '1rem' : 'clamp(1rem, 1.2vw, 1.2rem)',
                   }}>
                     <div style={{
-                      width: isMobile ? '70px' : '90px',
-                      height: isMobile ? '70px' : '90px',
+                      width: isMobile ? '70px' : 'clamp(70px, 5vw, 80px)',
+                      height: isMobile ? '70px' : 'clamp(70px, 5vw, 80px)',
                       borderRadius: '8px',
                       overflow: 'hidden',
                       display: 'flex',
@@ -457,8 +459,8 @@ export default function Home() {
                     fontSize: isMobile ? '1rem' : 'clamp(1rem, 1.2vw, 1.2rem)',
                   }}>
                     <div style={{
-                      width: isMobile ? '70px' : '90px',
-                      height: isMobile ? '70px' : '90px',
+                      width: isMobile ? '70px' : 'clamp(70px, 5vw, 80px)',
+                      height: isMobile ? '70px' : 'clamp(70px, 5vw, 80px)',
                       borderRadius: '8px',
                       overflow: 'hidden',
                       display: 'flex',
@@ -505,8 +507,8 @@ export default function Home() {
                     gap: '1rem'
                   }}>
                     <div style={{
-                      width: isMobile ? '90px' : '120px',
-                      height: isMobile ? '90px' : '120px',
+                      width: isMobile ? '90px' : 'clamp(90px, 7vw, 100px)',
+                      height: isMobile ? '90px' : 'clamp(90px, 7vw, 100px)',
                       borderRadius: '8px',
                       overflow: 'hidden',
                       display: 'flex',
