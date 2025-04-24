@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import styled from 'styled-components'
-import Footer from './Footer'
 import Home from '../pages/Home'
 import BtsSio from '../pages/BtsSio'
 import Competence from '../pages/Competence'
@@ -31,11 +30,11 @@ const CarouselContainer = styled.div`
       switch (pathname) {
 
         case '/bts-sio':
-          return '120vh';
+          return '60vh';
         case '/skill':
           return '34vh';
         case '/veille-techno':
-          return '12rem';
+          return '3rem';
         default:
           return '2rem';
       }
@@ -44,7 +43,7 @@ const CarouselContainer = styled.div`
 
   .page-content {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -52,7 +51,7 @@ const CarouselContainer = styled.div`
       switch (pathname) {
 
         case '/bts-sio':
-          return 'calc(100% - 140vh)';
+          return 'calc(100% - 80vh)';
         case '/skill':
           return 'calc(100% - 34vh)';
         case '/veille-techno':
@@ -67,6 +66,7 @@ const CarouselContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
 
   .page-container {
@@ -77,6 +77,13 @@ const CarouselContainer = styled.div`
     flex-direction: column;
   }
 
+  @media (min-width: 1200px) {
+    .page-content {
+      max-width: 1600px;
+      width: 85%;
+    }
+  }
+
   @media (max-width: 1024px) {
     padding: 4rem 0 0 0;
     
@@ -84,11 +91,10 @@ const CarouselContainer = styled.div`
       height: calc(100vh - 4rem);
       overflow-y: auto !important;
       padding-bottom: ${({ pathname }) => {
-        console.log('Media query pathname:', pathname);
         switch (pathname) {
 
           case '/bts-sio':
-            return '140vh';
+            return '80vh';
           case '/skill':
             return '34vh';
           case '/veille-techno':
@@ -184,7 +190,6 @@ export default function Carousel() {
                 <div className="content-area">
                   <CurrentComponent />
                 </div>
-                <Footer />
               </motion.div>
             </AnimatePresence>
           </div>

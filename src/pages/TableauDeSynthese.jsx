@@ -23,19 +23,23 @@ export default function TableauDeSynthese() {
     gap: '0rem',
     width: '100%',
     height: '100%',
-    maxWidth: '1000px',
+    maxWidth: '1800px',
     margin: '0 auto',
+    paddingBottom: isMobile ? '4rem' : '8rem',
   };
 
   const presentationStyles = {
     display: 'flex',
     justifyContent: 'center',
+    width: '100%',
+    maxWidth: '1400px',
+    margin: '0 auto',
     paddingTop: isMobile ? '2rem' : '4rem',
   };
 
   const presentationCardStyles = {
     flex: 1,
-    maxWidth: '1000px',
+    maxWidth: '1400px',
     minWidth: isMobile ? '300px' : '400px',
     height: 'min(180px, 28vh)',
   };
@@ -59,7 +63,7 @@ export default function TableauDeSynthese() {
   const titleStyles = {
     color: 'white',
     margin: 0,
-    fontSize: isMobile ? '1.2rem' : '1.4rem',
+    fontSize: isMobile ? '1.2rem' : '1.8rem',
     textAlign: 'center',
     borderBottom: '1px solid rgba(255,255,255,0.1)',
     paddingBottom: '0.5rem',
@@ -74,7 +78,7 @@ export default function TableauDeSynthese() {
     color: 'white',
     lineHeight: '1.5',
     textAlign: 'center',
-    fontSize: isMobile ? '0.8rem' : '0.9rem',
+    fontSize: isMobile ? '0.8rem' : '1.2rem',
     maxWidth: '800px',
     padding: isMobile ? '0 1rem' : '0 1.5rem',
     margin: 0,
@@ -84,35 +88,37 @@ export default function TableauDeSynthese() {
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
+    maxWidth: '1400px',
+    margin: '0 auto',
     padding: isMobile ? '1rem 0 2rem 0' : '2rem 0 3rem 0',
   };
 
   const downloadCardStyles = {
-    padding: '1rem',
+    padding: '1.5rem',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '1.5rem',
     maxHeight: isMobile ? 'none' : 'calc(120vh - 10rem)',
-    width: isMobile ? '100%' : 'max(800px, 80vh)',
+    width: isMobile ? '100%' : 'max(1200px, 80vh)',
   };
 
   const contentLayoutStyles = {
     display: 'flex',
     flexDirection: isMobile ? 'column' : 'row',
     alignItems: isMobile ? 'stretch' : 'flex-start',
-    gap: isMobile ? '2rem' : '3rem',
+    gap: isMobile ? '2rem' : '6rem',
     width: '100%',
-    padding: isMobile ? '0.5rem' : '1rem',
+    padding: isMobile ? '0.5rem' : '1.5rem',
   };
 
   const leftSectionStyles = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '1.5rem',
     flex: isMobile ? '1' : '0 0 auto',
-    width: isMobile ? '100%' : '300px',
+    width: isMobile ? '100%' : '400px',
     borderRight: isMobile ? 'none' : '1px solid rgba(255,255,255,0.1)',
-    paddingRight: isMobile ? '0' : '2rem',
+    paddingRight: isMobile ? '0' : '3rem',
     paddingBottom: isMobile ? '1rem' : '0',
     borderBottom: isMobile ? '1px solid rgba(255,255,255,0.1)' : 'none',
   };
@@ -128,7 +134,7 @@ export default function TableauDeSynthese() {
 
   const headerTitleStyles = {
     color: 'white',
-    fontSize: isMobile ? '0.9rem' : '1rem',
+    fontSize: isMobile ? '0.9rem' : '1.4rem',
     margin: 0,
     textShadow: '0 2px 4px rgba(0,0,0,0.3)',
   };
@@ -170,9 +176,10 @@ export default function TableauDeSynthese() {
   const rightSectionStyles = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '1.5rem',
     flex: 1,
     minWidth: 0,
+    width: isMobile ? '100%' : '450px',
   };
 
   return (
@@ -201,7 +208,7 @@ export default function TableauDeSynthese() {
               <div style={contentLayoutStyles}>
                 <div style={leftSectionStyles}>
                   <div style={headerStyles}>
-                    <FileText size={28} color="white" />
+                    <FileText size={isMobile ? 28 : 36} color="white" />
                     <h2 style={headerTitleStyles}>
                       Tableau de Synthèse BTS SIO
                     </h2>
@@ -223,7 +230,7 @@ export default function TableauDeSynthese() {
                         e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
                       }}
                     >
-                      <FileDown size={48} style={{
+                      <FileDown size={isMobile ? 48 : 64} style={{
                         filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))',
                         transition: 'all 0.3s ease',
                       }} />
@@ -245,7 +252,7 @@ export default function TableauDeSynthese() {
                   }}>
                     <h2 style={{ 
                       color: 'white',
-                      fontSize: isMobile ? '0.9rem' : '1rem',
+                      fontSize: isMobile ? '0.9rem' : '1.4rem',
                       margin: 0,
                       textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                     }}>
@@ -257,7 +264,7 @@ export default function TableauDeSynthese() {
                     color: 'white',
                     margin: 0,
                     paddingLeft: '1.5rem',
-                    fontSize: isMobile ? '0.8rem' : '0.9rem',
+                    fontSize: isMobile ? '0.8rem' : '1.2rem',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.5rem',

@@ -32,7 +32,7 @@ const ImageWithCondition = ({ src, alt, expandedCard, cardId, style }) => {
     opacity: expandedCard === cardId ? 1 : 0,
     transform: expandedCard === cardId ? 'scale(1)' : 'scale(0.95)',
     position: 'relative',
-    maxHeight: expandedCard === cardId ? '600px' : '0px',
+    maxHeight: expandedCard === cardId ? '1000px' : '0px',
     overflow: 'hidden',
     marginTop: expandedCard === cardId ? '1rem' : '0',
     marginBottom: expandedCard === cardId ? '1rem' : '0'
@@ -119,19 +119,23 @@ export default function VeilleTechno() {
     flexDirection: 'column',
     width: '100%',
     height: '100%',
-    maxWidth: '1000px',
+    maxWidth: '1800px',
     margin: '0 auto',
+    paddingBottom: isMobile ? '4rem' : '8rem',
   };
 
   const presentationCardStyles = {
     display: 'flex',
     justifyContent: 'center',
+    width: '100%',
+    maxWidth: '1400px',
+    margin: '0 auto',
     paddingTop: isMobile ? '2rem' : '4rem',
   };
 
   const presentationContainerStyles = {
     flex: 1,
-    maxWidth: '1000px',
+    maxWidth: '1400px',
     minWidth: isMobile ? '300px' : '400px',
     height: 'min(180px, 28vh)',
   };
@@ -148,7 +152,7 @@ export default function VeilleTechno() {
   const titleStyles = {
     color: 'white',
     margin: 0,
-    fontSize: isMobile ? '1.2rem' : '1.4rem',
+    fontSize: isMobile ? '1.2rem' : '1.8rem',
     textAlign: 'center',
     borderBottom: '1px solid rgba(255,255,255,0.1)',
     paddingBottom: '1rem',
@@ -163,7 +167,7 @@ export default function VeilleTechno() {
     color: 'white',
     lineHeight: '1.5',
     textAlign: 'center',
-    fontSize: isMobile ? '0.8rem' : '0.9rem',
+    fontSize: isMobile ? '0.8rem' : '1.2rem',
     maxWidth: '800px',
     padding: isMobile ? '0 1rem' : '0 1.5rem',
     margin: 0,
@@ -171,27 +175,30 @@ export default function VeilleTechno() {
 
   const cardsContainerStyles = {
     display: 'flex',
-    gap: isMobile ? '1rem' : '1.95rem',
     justifyContent: 'center',
     flexDirection: isMobile ? 'column' : 'row',
     alignItems: isMobile ? 'center' : 'stretch',
+    gap: isMobile ? '1rem' : '5rem',
     padding: isMobile ? '0 1rem' : 0,
+    width: '100%',
+    maxWidth: '1400px',
+    margin: '0 auto',
   };
 
   const getCardContainerStyles = (cardId) => ({
     flex: expandedCard && expandedCard !== cardId ? '0' : '1',
     marginTop: expandedCard === cardId ? (isMobile ? '2rem' : '4rem') : '2rem',
-    maxWidth: expandedCard === cardId ? '95%' : (isMobile ? '100%' : '500px'),
+    maxWidth: expandedCard === cardId ? '1400px' : (isMobile ? '100%' : '600px'),
     minWidth: expandedCard === cardId ? '95%' : (isMobile ? '100%' : '300px'),
     height: expandedCard ? 'auto' : '100%',
-    maxHeight: 'calc(85vh - 7rem)',
+    maxHeight: expandedCard === cardId ? 'calc(95vh - 7rem)' : 'calc(85vh - 7rem)',
     display: expandedCard && expandedCard !== cardId ? 'none' : 'block',
     transition: 'all 0.3s ease',
   });
 
   const getCardStyles = (cardId) => ({
     ...scrollbarHideStyles,
-    padding: expandedCard === cardId ? '0' : (isMobile ? '0 1rem 1rem 1rem' : '0 1.5rem 1.5rem 1.5rem'),
+    padding: expandedCard === cardId ? '0' : (isMobile ? '0 1rem 1rem 1rem' : '0 2.5rem 2.5rem 2.5rem'),
     transition: 'padding 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     maxHeight: expandedCard ? '100vh' : 'none',
     height: expandedCard === cardId ? '90vh' : '100%',
@@ -235,13 +242,13 @@ export default function VeilleTechno() {
                   backgroundColor: expandedCard ? 'rgba(10,10,10,0.95)' : 'rgba(20,20,20,0.5)',
                   padding: '1rem',
                   zIndex: 101,
-                  margin: expandedCard ? '0' : '-1.5rem -1.5rem 1rem -1.5rem',
+                  margin: expandedCard ? '0' : '-2.5rem -2.5rem 1rem -2.5rem',
                   marginTop: expandedCard ? 0 : '-2px',
                   marginBottom: expandedCard ? '1rem' : 0,
                   borderBottom: '1px solid rgba(255,255,255,0.1)',
-                  width: expandedCard ? '100%' : 'calc(100% + 3rem)',
-                  left: expandedCard ? '0' : '-1.5rem',
-                  right: expandedCard ? '0' : '-1.5rem',
+                  width: expandedCard ? '100%' : 'calc(100% + 5rem)',
+                  left: expandedCard ? '0' : '-2.5rem',
+                  right: expandedCard ? '0' : '-2.5rem',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   boxSizing: 'border-box',
                 }}>
@@ -319,33 +326,47 @@ export default function VeilleTechno() {
                   borderRadius: '12px',
                 }}>
                   <h3 style={{ 
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
                   }}>Pourquoi ce sujet ?</h3>
                   <div style={{
                     display: 'flex',
-                    alignItems: 'center',
+                    flexDirection: expandedCard === 'ransomware' ? 'row' : 'column',
+                    alignItems: 'flex-start',
                     justifyContent: 'space-between',
+                    gap: expandedCard === 'ransomware' ? '2rem' : '0',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
                       transition: 'all 0.3s ease',
+                      flex: expandedCard === 'ransomware' ? '1' : 'auto',
                     }}>
                       Les attaques par ransomware ont explosé depuis 2022, touchant des secteurs critiques (santé, énergie, collectivités). 
                       Elles combinent chiffrement des données, extorsion financière et menace de fuite, avec des coûts économiques et humains majeurs.
                     </p>
-                    <ImageWithCondition 
-                      src="../images/veille/Ransomware_as_a_Service.webp" 
-                      alt="Cycle d'attaque ransomware" 
-                      expandedCard={expandedCard} 
-                      cardId="ransomware" 
-                      style={{ marginBottom: '1rem', background: 'rgb(255, 255, 255)' }} 
-                    />
+                    <div style={{
+                      flex: expandedCard === 'ransomware' ? '1' : 'auto',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                      <ImageWithCondition 
+                        src="../images/veille/Ransomware_as_a_Service.webp" 
+                        alt="Cycle d'attaque ransomware" 
+                        expandedCard={expandedCard} 
+                        cardId="ransomware" 
+                        style={{ 
+                          marginBottom: '1rem', 
+                          background: 'rgb(255, 255, 255)',
+                          maxWidth: expandedCard === 'ransomware' ? '100%' : '100%',
+                        }} 
+                      />
+                    </div>
                   </div>
                   
                   <div style={{
@@ -354,7 +375,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -368,7 +389,7 @@ export default function VeilleTechno() {
                   </div>
 
                   <h3 style={{ 
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -381,7 +402,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -400,7 +421,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -425,7 +446,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -449,7 +470,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -474,7 +495,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -498,7 +519,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -523,7 +544,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -536,13 +557,13 @@ export default function VeilleTechno() {
                   </div>
 
                   <h3 style={{ 
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
                   }}>Sources et outils de veille</h3>
                   <p style={{
-                    fontSize: '0.9rem',
+                    fontSize: isMobile ? '0.9rem' : '1.2rem',
                     lineHeight: '1.7',
                     margin: '0 0 0.8rem 0',
                     color: 'rgba(255,255,255,0.9)',
@@ -555,13 +576,13 @@ export default function VeilleTechno() {
                   </p>
 
                   <h3 style={{ 
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
                   }}>Synthèse et perspectives</h3>
                   <p style={{
-                    fontSize: '0.9rem',
+                    fontSize: isMobile ? '0.9rem' : '1.2rem',
                     lineHeight: '1.7',
                     margin: '0 0 0.8rem 0',
                     color: 'rgba(255,255,255,0.9)',
@@ -572,7 +593,7 @@ export default function VeilleTechno() {
                     • Utilisation accrue de l'IA par les cybercriminels pour automatiser les attaques
                   </p>
                   <p style={{
-                    fontSize: '0.9rem',
+                    fontSize: isMobile ? '0.9rem' : '1.2rem',
                     lineHeight: '1.7',
                     margin: '0 0 0.8rem 0',
                     color: 'rgba(255,255,255,0.9)',
@@ -589,24 +610,8 @@ export default function VeilleTechno() {
           </CardContainer>
 
           {/* Carte Informatique Quantique */}
-          <CardContainer style={{
-            flex: expandedCard && expandedCard !== 'quantum' ? '0' : '1',
-            marginTop: expandedCard === 'quantum' ? '4rem' : '2rem',
-            maxHeight: 'calc(85vh - 7rem)',
-            maxWidth: expandedCard === 'quantum' ? '95%' : (isMobile ? '100%' : '500px'),
-            minWidth: expandedCard === 'quantum' ? '95%' : (isMobile ? '100%' : '300px'),
-            height: expandedCard ? 'auto' : '100%',
-            display: expandedCard && expandedCard !== 'quantum' ? 'none' : 'block',
-            transition: 'all 0.3s ease',
-          }}>
-            <StyledCard className="hide-scrollbar" style={{
-              ...scrollbarHideStyles,
-              padding: expandedCard === 'quantum' ? '0' : (isMobile ? '0 1rem 1rem 1rem' : '0 1.5rem 1.5rem 1.5rem'),
-              margin: '0 auto',
-              transition: 'padding 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-              maxHeight: expandedCard ? '100vh' : 'none',
-              height: expandedCard === 'quantum' ? '95vh' : '100%',
-            }}>
+          <CardContainer style={getCardContainerStyles('quantum')}>
+            <StyledCard className="hide-scrollbar" style={getCardStyles('quantum')}>
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -623,13 +628,13 @@ export default function VeilleTechno() {
                   backgroundColor: expandedCard ? 'rgba(10,10,10,0.95)' : 'rgba(20,20,20,0.5)',
                   padding: '1rem',
                   zIndex: 101,
-                  margin: expandedCard ? '0' : '-1.5rem -1.5rem 1rem -1.5rem',
+                  margin: expandedCard ? '0' : '-2.5rem -2.5rem 1rem -2.5rem',
                   marginTop: expandedCard ? 0 : '-2px',
                   marginBottom: expandedCard ? '1rem' : 0,
                   borderBottom: '1px solid rgba(255,255,255,0.1)',
-                  width: expandedCard ? '100%' : 'calc(100% + 3rem)',
-                  left: expandedCard ? '0' : '-1.5rem',
-                  right: expandedCard ? '0' : '-1.5rem',
+                  width: expandedCard ? '100%' : 'calc(100% + 5rem)',
+                  left: expandedCard ? '0' : '-2.5rem',
+                  right: expandedCard ? '0' : '-2.5rem',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   boxSizing: 'border-box',
                 }}>
@@ -706,34 +711,46 @@ export default function VeilleTechno() {
                   padding: expandedCard ? '0 2rem 2rem 2rem' : '0',
                 }}>
                   <h3 style={{
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
                   }}>Pourquoi ce sujet ?</h3>
                   <div style={{
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: expandedCard === 'quantum' ? 'row' : 'column',
                     alignItems: 'flex-start',
                     justifyContent: 'space-between',
+                    gap: expandedCard === 'quantum' ? '2rem' : '0',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
                       transition: 'all 0.3s ease',
+                      flex: expandedCard === 'quantum' ? '1' : 'auto',
                     }}>
                       L'informatique quantique promet de révolutionner le monde numérique en résolvant des problèmes jusqu'ici impossibles à traiter.
                       Cette technologie aura un impact majeur sur la cryptographie et la sécurité des systèmes d'information.
                     </p>
-                    <ImageWithCondition
-                      src="../images/veille/Intriquation.webp"
-                      alt="Ordinateur quantique IBM"
-                      expandedCard={expandedCard}
-                      cardId="quantum"
-                      style={{ marginBottom: '1rem' }}
-                    />
+                    <div style={{
+                      flex: expandedCard === 'quantum' ? '1' : 'auto',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                      <ImageWithCondition
+                        src="../images/veille/Intriquation.webp"
+                        alt="Ordinateur quantique IBM"
+                        expandedCard={expandedCard}
+                        cardId="quantum"
+                        style={{ 
+                          marginBottom: '1rem',
+                          maxWidth: expandedCard === 'quantum' ? '100%' : '100%',
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <div style={{
@@ -743,7 +760,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -756,7 +773,7 @@ export default function VeilleTechno() {
                   </div>
 
                   <h3 style={{
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -765,28 +782,40 @@ export default function VeilleTechno() {
                   <strong style={{ fontSize: '1.1rem' }}>A. Évolution technologique</strong>
                   <div style={{
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: expandedCard === 'quantum' ? 'row' : 'column',
                     alignItems: 'flex-start',
                     justifyContent: 'space-between',
+                    gap: expandedCard === 'quantum' ? '2rem' : '0',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
                       transition: 'all 0.3s ease',
+                      flex: expandedCard === 'quantum' ? '1' : 'auto',
                     }}>
                       <u style={{ fontSize: '1rem' }}>Qubits et superposition :</u><br />
                       • Unité quantique pouvant être dans plusieurs états simultanément<br />
                       • Permet des calculs parallèles massifs
                     </p>
-                    <ImageWithCondition
-                      src="../images/veille/superposition-quantique.webp"
-                      alt="Qubits et superposition"
-                      expandedCard={expandedCard}
-                      cardId="quantum"
-                      style={{ marginBottom: '1rem' }}
-                    />
+                    <div style={{
+                      flex: expandedCard === 'quantum' ? '1' : 'auto',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                      <ImageWithCondition
+                        src="../images/veille/superposition-quantique.webp"
+                        alt="Qubits et superposition"
+                        expandedCard={expandedCard}
+                        cardId="quantum"
+                        style={{ 
+                          marginBottom: '1rem',
+                          maxWidth: expandedCard === 'quantum' ? '100%' : '100%',
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <div style={{
@@ -796,7 +825,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -816,7 +845,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -835,7 +864,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -855,7 +884,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -874,7 +903,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -894,7 +923,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -906,13 +935,13 @@ export default function VeilleTechno() {
                   </div>
 
                   <h3 style={{
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
                   }}>Sources et outils de veille</h3>
                   <p style={{
-                    fontSize: '0.9rem',
+                    fontSize: isMobile ? '0.9rem' : '1.2rem',
                     lineHeight: '1.7',
                     margin: '0 0 0.8rem 0',
                     color: 'rgba(255,255,255,0.9)',
@@ -925,7 +954,7 @@ export default function VeilleTechno() {
                   </p>
 
                   <h3 style={{
-                    fontSize: '1.1rem',
+                    fontSize: isMobile ? '1.1rem' : '1.4rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -937,7 +966,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',
@@ -955,7 +984,7 @@ export default function VeilleTechno() {
                     justifyContent: 'space-between',
                   }}>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       lineHeight: '1.7',
                       margin: '0 0 0.8rem 0',
                       color: 'rgba(255,255,255,0.9)',

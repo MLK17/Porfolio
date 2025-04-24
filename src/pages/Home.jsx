@@ -26,28 +26,34 @@ export default function Home() {
     flexDirection: 'column',
     width: '100%',
     height: '100%',
-    maxWidth: '1400px',
     margin: '0 auto',
-    gap: '1.95rem',
+    gap: '1.5rem',
+    alignItems: 'center',
+    boxSizing: 'border-box',
   };
 
   const presentationCardStyles = {
     display: 'flex',
     justifyContent: 'center',
-    paddingTop: isMobile ? '2rem' : '3.8rem',
-    marginBottom: '0.5rem',
+    paddingTop: isMobile ? '2rem' : 'clamp(2rem, 3vw, 3.8rem)',
+    marginBottom: 'clamp(0.5rem, 1vw, 1.5rem)',
+    width: '100%',
   };
 
   const cardContainerStyles = {
     flex: 1,
-    maxWidth: '1000px',
+    maxWidth: '1200px',
     minWidth: isMobile ? '300px' : '400px',
     height: isMobile ? 'auto' : 'min(750px, 80vh)',
     minHeight: isMobile ? '80vh' : 'auto',
+    boxSizing: 'border-box',
   };
 
   const cardContentStyles = {
     padding: isMobile ? '1rem' : '2rem',
+    paddingLarge: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+    paddingExtraLarge: 'clamp(1.8rem, 2.8vw, 2.8rem)',
+    paddingUltraLarge: 'clamp(2rem, 3vw, 3rem)',
     display: 'flex',
     height: '100%',
   };
@@ -61,6 +67,7 @@ export default function Home() {
     flexDirection: isMobile ? 'column' : 'row',
     alignItems: isMobile ? 'center' : 'stretch',
     gap: isMobile ? '2rem' : '0',
+    maxWidth: '1800px',
   };
 
   const separatorStyles = {
@@ -77,24 +84,24 @@ export default function Home() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: isMobile ? '1.5rem' : '2.5rem',
+    gap: isMobile ? '1.5rem' : 'clamp(2.5rem, 3vw, 3.5rem)',
     padding: isMobile ? '1.5rem' : '3rem 2.5rem',
-    width: isMobile ? '100%' : '350px',
+    width: isMobile ? '100%' : 'clamp(350px, 20vw, 450px)',
     justifyContent: 'center',
   };
 
   const titleStyles = {
     color: 'white',
-    fontSize: isMobile ? '1.6rem' : '2rem',
+    fontSize: isMobile ? '1.6rem' : 'clamp(2rem, 3vw, 2.8rem)',
     textAlign: 'center',
     margin: '0',
     textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-    maxWidth: '280px',
+    maxWidth: isMobile ? '280px' : '350px',
     letterSpacing: '0.5px',
   };
 
   const photoContainerStyles = {
-    width: isMobile ? '120px' : '150px',
+    width: isMobile ? '150px' : 'clamp(180px, 15vw, 250px)',
     aspectRatio: '1',
     position: 'relative',
     borderRadius: '50%',
@@ -102,6 +109,9 @@ export default function Home() {
     border: '3px solid rgba(255, 255, 255, 0.8)',
     boxShadow: '0 0 30px rgba(255,255,255,0.15)',
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   };
 
   const rightSectionStyles = {
@@ -118,31 +128,36 @@ export default function Home() {
   const descriptionStyles = {
     color: 'white',
     lineHeight: isMobile ? '1.8' : '2',
-    fontSize: isMobile ? '1rem' : '1.2rem',
+    fontSize: isMobile ? '1rem' : 'clamp(1.2rem, 1.8vw, 1.6rem)',
     margin: '0',
-    maxWidth: '600px',
+    maxWidth: '800px',
     textShadow: '0 2px 4px rgba(0,0,0,0.2)',
   };
 
   const formationCardStyles = {
     display: 'flex',
     justifyContent: 'center',
+    width: '100%',
   };
 
   const formationCardContainerStyles = {
     flex: 1,
-    maxWidth: '1000px',
+    maxWidth: '1200px',
     minWidth: '400px',
-    height: 'min(230px, 34vh)',
+    height: 'min(350px, 45vh)',
+    boxSizing: 'border-box',
   };
 
   const formationCardContentStyles = {
     padding: '1.5rem',
+    paddingLarge: 'clamp(1.5rem, 2vw, 2rem)',
+    paddingExtraLarge: 'clamp(1.8rem, 2.2vw, 2.2rem)',
+    paddingUltraLarge: 'clamp(2rem, 2.5vw, 2.5rem)',
   };
 
   const formationTitleStyles = {
     color: 'white',
-    fontSize: '1.8rem',
+    fontSize: 'clamp(1.5rem, 2.5vw, 2.4rem)',
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
@@ -156,31 +171,37 @@ export default function Home() {
     padding: 0,
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.8rem',
-    fontSize: '0.8rem',
+    gap: '1.5rem',
+    marginTop: '1rem',
+    fontSize: isMobile ? '0.9rem' : 'clamp(1rem, 1.5vw, 1.4rem)',
   };
 
   const certificationCardStyles = {
     display: 'flex',
     justifyContent: 'center',
-    gap: '1rem',
-    paddingBottom: '3rem',
+    gap: '0.75rem',
+    flexWrap: 'wrap',
+    width: '100%',
   };
 
   const certificationCardContainerStyles = {
     flex: 1,
-    maxWidth: '490px',
-    minWidth: '250px',
+    maxWidth: '600px',
+    minWidth: '300px',
+    height: isMobile ? 'auto' : 'min(380px, 38vh)',
+    boxSizing: 'border-box',
   };
 
   const certificationCardContentStyles = {
     padding: '1.5rem',
-    height: '100%',
+    paddingLarge: 'clamp(1.5rem, 2vw, 2rem)',
+    paddingExtraLarge: 'clamp(1.8rem, 2.2vw, 2.2rem)',
+    paddingUltraLarge: 'clamp(2rem, 2.5vw, 2.5rem)',
   };
 
   const certificationTitleStyles = {
     color: 'white',
-    fontSize: '1.8rem',
+    fontSize: 'clamp(1.5rem, 2.5vw, 2.4rem)',
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
@@ -189,35 +210,43 @@ export default function Home() {
   };
 
   const certificationListStyles = {
+    color: 'white',
     display: 'flex',
     flexDirection: 'column',
     gap: '0.8rem',
-    overflow: 'auto',
+    marginTop: '0.8rem',
+    fontSize: isMobile ? '0.9rem' : 'clamp(1rem, 1.5vw, 1.4rem)',
   };
 
   const alternanceCardStyles = {
     display: 'flex',
     flexDirection: isMobile ? 'column' : 'row',
     justifyContent: 'center',
-    gap: isMobile ? '1rem' : '2.5rem',
-    paddingBottom: isMobile ? '1.5rem' : '3rem',
+    gap: isMobile ? '0.75rem' : '0.75rem',
+    paddingBottom: isMobile ? '1.5rem' : '2rem',
+    width: '100%',
+    flexWrap: 'wrap',
   };
 
   const alternanceCardContainerStyles = {
     flex: 1,
-    maxWidth: isMobile ? '100%' : '490px',
-    minWidth: isMobile ? '300px' : '250px',
+    maxWidth: '600px',
+    minWidth: '300px',
     height: isMobile ? 'auto' : 'min(380px, 38vh)',
+    boxSizing: 'border-box',
   };
 
   const alternanceCardContentStyles = {
     padding: isMobile ? '1rem' : '1.5rem',
+    paddingLarge: 'clamp(1.5rem, 2vw, 2rem)',
+    paddingExtraLarge: 'clamp(1.8rem, 2.2vw, 2.2rem)',
+    paddingUltraLarge: 'clamp(2rem, 2.5vw, 2.5rem)',
     height: '100%',
   };
 
   const alternanceTitleStyles = {
     color: 'white',
-    fontSize: isMobile ? '1.4rem' : '1.8rem',
+    fontSize: isMobile ? '1.4rem' : 'clamp(1.5rem, 2.5vw, 2.4rem)',
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
@@ -235,7 +264,7 @@ export default function Home() {
   };
 
   return (
-    <StyledContent>
+    <StyledContent maxWidth="1600px" cardWidth="100%" justifyContent="flex-start">
       <div style={containerStyles}>
         <div style={presentationCardStyles}>
           <CardContainer style={cardContainerStyles}>
@@ -253,12 +282,8 @@ export default function Home() {
                       src={profilePhoto}
                       alt="Photo de profil"
                       style={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '180px',
-                        height: '200px',
+                        width: '100%',
+                        height: '100%',
                         objectFit: 'cover',
                         objectPosition: 'center 12%',
                       }}
@@ -316,6 +341,7 @@ export default function Home() {
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
+                maxWidth: '100%',
               }}>
                 <div style={{
                   display: 'flex',
@@ -325,7 +351,7 @@ export default function Home() {
                 }}>
                   <h2 style={formationTitleStyles}>
                     <GraduationCap size={24} />
-                    Formation
+                    Formations
                   </h2>
                 </div>
                 <ul style={formationListStyles}>
@@ -378,7 +404,7 @@ export default function Home() {
         </div>
 
         <div style={certificationCardStyles}>
-          <CardContainer style={certificationCardContainerStyles}>
+          <CardContainer style={{...certificationCardContainerStyles, marginRight: 0}}>
             <StyledCard style={certificationCardContentStyles}>
               <div style={{
                 display: 'flex',
@@ -394,41 +420,73 @@ export default function Home() {
                   <li style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem',
+                    gap: '1rem',
                     color: 'white',
-                    fontSize: '0.9rem',
+                    fontSize: isMobile ? '1rem' : 'clamp(1rem, 1.2vw, 1.2rem)',
                   }}>
-                    <span style={{
-                      display: 'inline-block',
-                      width: '6px',
-                      height: '6px',
+                    <div style={{
+                      width: isMobile ? '70px' : '90px',
+                      height: isMobile ? '70px' : '90px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
                       backgroundColor: 'white',
-                      borderRadius: '50%',
-                    }}></span>
-                    2024 - Certification Cisco Cybersecurity Essentials (Mars 2024)
+                      padding: '5px',
+                    }}>
+                      <img 
+                        src="/Cisco.jpg" 
+                        alt="Logo Cisco" 
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                        }}
+                      />
+                    </div>
+                    <div>
+                      2024 - Certification Cisco Cybersecurity Essentials (Mars 2024)
+                    </div>
                   </li>
                   <li style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem',
+                    gap: '1rem',
                     color: 'white',
-                    fontSize: '0.9rem',
+                    fontSize: isMobile ? '1rem' : 'clamp(1rem, 1.2vw, 1.2rem)',
                   }}>
-                    <span style={{
-                      display: 'inline-block',
-                      width: '6px',
-                      height: '6px',
+                    <div style={{
+                      width: isMobile ? '70px' : '90px',
+                      height: isMobile ? '70px' : '90px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
                       backgroundColor: 'white',
-                      borderRadius: '50%',
-                    }}></span>
-                    2022 - Apple Foundation Program - Simplon (Décembre 2022)
+                      padding: '5px',
+                    }}>
+                      <img 
+                        src="/applesimplon-removebg-preview.jpg" 
+                        alt="Logo Apple Simplon" 
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                        }}
+                      />
+                    </div>
+                    <div>
+                      2022 - Apple Foundation Program - Simplon (Décembre 2022)
+                    </div>
                   </li>
                 </div>
               </div>
             </StyledCard>
           </CardContainer>
 
-          <CardContainer style={alternanceCardContainerStyles}>
+          <CardContainer style={{...alternanceCardContainerStyles, marginLeft: 0}}>
             <StyledCard style={alternanceCardContentStyles}>
               <div style={{
                 display: 'flex',
@@ -441,27 +499,54 @@ export default function Home() {
                   Alternance
                 </h2>
                 <div style={alternanceContentStyles}>
-                  <div>
-                    <h3 style={{ 
-                      fontSize: '1.3rem', 
-                      color: 'white',
-                      marginBottom: '0.3rem'
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem'
+                  }}>
+                    <div style={{
+                      width: isMobile ? '90px' : '120px',
+                      height: isMobile ? '90px' : '120px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      backgroundColor: 'white',
+                      padding: '5px',
                     }}>
-                      L'Oréal
-                    </h3>
-                    <p style={{ 
-                      fontSize: '1.1rem',
-                      opacity: 0.9,
-                      marginBottom: '0.3rem'
-                    }}>
-                      Architecture réseau et support solution logiciel
-                    </p>
-                    <p style={{ 
-                      fontSize: '0.8rem',
-                      opacity: 0.7,
-                    }}>
-                      2023 - 2024
-                    </p>
+                      <img 
+                        src="/Loreal-logo.jpg" 
+                        alt="Logo L'Oréal" 
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <h3 style={{ 
+                        fontSize: isMobile ? '1.3rem' : 'clamp(1.3rem, 2vw, 1.8rem)', 
+                        color: 'white',
+                        marginBottom: '0.4rem'
+                      }}>
+                        L'Oréal
+                      </h3>
+                      <p style={{ 
+                        fontSize: isMobile ? '1.1rem' : 'clamp(1.1rem, 1.8vw, 1.5rem)',
+                        opacity: 0.9,
+                        marginBottom: '0.4rem'
+                      }}>
+                        Architecture réseau et support solution logiciel
+                      </p>
+                      <p style={{ 
+                        fontSize: isMobile ? '0.8rem' : 'clamp(0.8rem, 1.2vw, 1.1rem)',
+                        opacity: 0.7,
+                      }}>
+                        2023 - 2024
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

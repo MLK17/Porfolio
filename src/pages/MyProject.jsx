@@ -41,18 +41,22 @@ export default function Projects() {
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        maxWidth: '1000px',
+        maxWidth: '1800px',
         margin: '0 auto',
+        paddingBottom: isMobile ? '4rem' : '8rem',
       }}>
         {/* Section de présentation */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
+          width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
           paddingTop: isMobile ? '2rem' : '4rem',
         }}>
           <div style={{ 
             flex: 1,
-            maxWidth: '1000px',
+            maxWidth: '1400px',
             minWidth: isMobile ? '300px' : '400px',
             height: 'min(180px, 28vh)',
           }}>
@@ -73,7 +77,7 @@ export default function Projects() {
                 <h2 style={{ 
                   color: 'white',
                   margin: 0,
-                  fontSize: isMobile ? '1.2rem' : '1.4rem',
+                  fontSize: isMobile ? '1.2rem' : '1.8rem',
                   textAlign: 'center',
                   borderBottom: '1px solid rgba(255,255,255,0.1)',
                   paddingBottom: '0.5rem',
@@ -89,7 +93,7 @@ export default function Projects() {
                   color: 'white',
                   lineHeight: '1.5',
                   textAlign: 'center',
-                  fontSize: isMobile ? '0.8rem' : '0.9rem',
+                  fontSize: isMobile ? '0.8rem' : '1.2rem',
                   maxWidth: '800px',
                   padding: isMobile ? '0 1rem' : '0 1.5rem',
                   margin: 0,
@@ -108,17 +112,22 @@ export default function Projects() {
           justifyContent: 'center',
           alignItems: isMobile ? 'stretch' : 'flex-start',
           width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
           padding: isMobile ? '1rem 0' : '2rem 0',
           gap: isMobile ? '1rem' : '2rem',
         }}>
           {/* Première carte - Projets Scolaires */}
-          <CardContainer>
+          <CardContainer style={{ 
+            maxWidth: '1200px',
+            width: '100%',
+          }}>
             <StyledCard className="hide-scrollbar" style={{ 
-              padding: isMobile ? '0 1rem 1rem 1rem' : '0 1.5rem 1.5rem 1.5rem',
+              padding: isMobile ? '0 1rem 1rem 1rem' : '0 2rem 2rem 2rem',
               margin: '0 auto',
               height: '100%',
               overflow: 'auto',
-              maxHeight: isMobile ? 'none' : 'calc(200vh - 30rem)',
+              maxHeight: isMobile ? 'none' : 'calc(150vh - 30rem)',
             }}>
               <div style={{
                 display: 'flex',
@@ -152,10 +161,10 @@ export default function Projects() {
                     padding: '0.5rem 0',
                     flex: 1,
                   }}>
-                    <Shield size={isMobile ? 24 : 28} color="white" />
+                    <Shield size={isMobile ? 24 : 36} color="white" />
                     <h2 style={{ 
                       color: 'white', 
-                      fontSize: isMobile ? '1.2rem' : '1.4rem',
+                      fontSize: isMobile ? '1.2rem' : '1.8rem',
                       textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                     }}>
                       Mes projets scolaires
@@ -165,13 +174,13 @@ export default function Projects() {
 
                 <div style={{
                   backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
+                  padding: isMobile ? '0.8rem' : '1.2rem',
                   borderRadius: '12px',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
       
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -181,7 +190,7 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -189,7 +198,7 @@ export default function Projects() {
                         WeatherApp est un projet de création d'une application météo en temps réel.
                       </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -229,12 +238,12 @@ export default function Projects() {
                 {/* Projet Pixel Art */}
                 <div style={{
                   backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
+                  padding: isMobile ? '0.8rem' : '1.2rem',
                   borderRadius: '12px',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -244,7 +253,7 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -252,7 +261,7 @@ export default function Projects() {
                         Projet de création d'images en pixels.
                       </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -305,10 +314,10 @@ export default function Projects() {
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
                   border: '2px solid rgba(255,255,255,1)',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -318,7 +327,7 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -327,7 +336,7 @@ export default function Projects() {
 
                       </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -379,11 +388,11 @@ export default function Projects() {
                   padding: isMobile ? '0.8rem' : '1rem',
                   borderRadius: '12px',
                   border: '2px solid rgba(255,255,255,1)',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -394,7 +403,7 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -402,7 +411,7 @@ export default function Projects() {
 
                       </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -441,12 +450,12 @@ export default function Projects() {
 
                 <div style={{
                   backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
+                  padding: isMobile ? '0.8rem' : '1.2rem',
                   borderRadius: '12px',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -456,14 +465,14 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
                       }}>
                       Projet de Gestion de personel réalisé avec mon profeseur                      </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -511,12 +520,12 @@ export default function Projects() {
 
                 <div style={{
                   backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
+                  padding: isMobile ? '0.8rem' : '1.2rem',
                   borderRadius: '12px',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -526,13 +535,13 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
                       }}>
 Réalisation d'un site web qui catalogue les joueurs de foot pour les faires parler grace à l'IA </p>                     <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -584,12 +593,15 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
           </CardContainer>
 
           {/* Deuxième carte - Projets Personnels */}
-          <CardContainer>
+          <CardContainer style={{ 
+            maxWidth: '1200px',
+            width: '100%',
+          }}>
             <StyledCard className="hide-scrollbar" style={{ 
               ...scrollbarHideStyles,
               padding: isMobile ? '0 1rem 1rem 1rem' : '0 1.5rem 1.5rem 1.5rem',
               margin: '0 auto',
-              maxHeight: isMobile ? 'none' : 'calc(200vh - 30rem)',
+              maxHeight: isMobile ? 'none' : 'calc(150vh - 30rem)',
             }}>
               <div style={{
                 display: 'flex',
@@ -622,10 +634,10 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                     padding: '0.5rem 0',
                     flex: 1,
                   }}>
-                    <Cpu size={isMobile ? 24 : 28} color="white" />
+                    <Cpu size={isMobile ? 24 : 36} color="white" />
                     <h2 style={{ 
                       color: 'white', 
-                      fontSize: isMobile ? '1.2rem' : '1.4rem',
+                      fontSize: isMobile ? '1.2rem' : '1.8rem',
                       textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                     }}>
                       Mes projets personnels
@@ -635,12 +647,12 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
 
                 <div style={{
                   backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
+                  padding: isMobile ? '0.8rem' : '1.2rem',
                   borderRadius: '12px',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -650,14 +662,14 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
                       }}>
                       Feed Place est un projet d'aplication mobile IOS facilitant la relation entre les peronnes en situation de précarité alimentaire et les coopératives solidaires                      </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
@@ -707,12 +719,12 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                 {/* Projet Pixel Art */}
                 <div style={{
                   backgroundColor: 'rgb(13, 13, 13)',
-                  padding: isMobile ? '0.8rem' : '1rem',
+                  padding: isMobile ? '0.8rem' : '1.2rem',
                   borderRadius: '12px',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                 }}>
                   <h3 style={{ 
-                    fontSize: isMobile ? '1.3rem' : '1.5rem',
+                    fontSize: isMobile ? '1.3rem' : '1.7rem',
                     margin: 0,
                     fontWeight: '500',
                     color: 'white',
@@ -722,14 +734,14 @@ Réalisation d'un site web qui catalogue les joueurs de foot pour les faires par
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',
                       }}>
                       Création d'un Conway's Game of Life qui simule le comportement des cellules dans un univers bidimensionnel.                      </p>
                       <p style={{
-                        fontSize: isMobile ? '0.9rem' : '1rem',
+                        fontSize: isMobile ? '0.9rem' : '1.2rem',
                         lineHeight: '1.7',
                         margin: '0 0 0.8rem 0',
                         color: 'rgba(255,255,255,0.9)',

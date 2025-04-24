@@ -31,17 +31,21 @@ export default function Competence() {
         gap: isMobile ? '1rem' : '1.95rem',
         width: '100%',
         height: '100%',
-        maxWidth: '1000px',
+        maxWidth: '1800px',
         margin: '0 auto',
+        paddingBottom: isMobile ? '4rem' : '8rem',
       }}>
         <div style={{
           display: 'flex',
           justifyContent: 'center',
+          width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
           paddingTop: isMobile ? '2rem' : '4rem',
         }}>
           <CardContainer style={{ 
             flex: 1,
-            maxWidth: '1000px',
+            maxWidth: '1400px',
             minWidth: isMobile ? '300px' : '400px',
             height: 'min(180px, 28vh)',
           }}>
@@ -62,7 +66,7 @@ export default function Competence() {
                 <h2 style={{ 
                   color: 'white',
                   margin: 0,
-                  fontSize: isMobile ? '1.2rem' : '1.4rem',
+                  fontSize: isMobile ? '1.2rem' : '1.8rem',
                   textAlign: 'center',
                   borderBottom: '1px solid rgba(255,255,255,0.1)',
                   paddingBottom: '1rem',
@@ -77,7 +81,7 @@ export default function Competence() {
                 <p style={{ 
                   color: 'white',
                   lineHeight: '1.5',
-                  fontSize: isMobile ? '0.8rem' : '0.9rem',
+                  fontSize: isMobile ? '0.8rem' : '1.2rem',
                   textAlign: 'center',
                   maxWidth: '800px',
                   margin: 0,
@@ -93,43 +97,44 @@ export default function Competence() {
         <div style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '2.5rem',
+          gap: isMobile ? '1rem' : '2rem',
           justifyContent: 'center',
           alignItems: isMobile ? 'stretch' : 'center',
           width: '100%',
-          maxWidth: '1000px',
+          maxWidth: '1400px',
           margin: '0 auto',
           boxShadow: 'none',
+          flexWrap: 'nowrap',
         }}>
           {[
             {
-              icon: <Users size={isMobile ? 28 : 32} color="white" />,
+              icon: <Users size={isMobile ? 28 : 40} color="white" />,
               title: "Travail d'équipe",
               description: "Collaboration efficace et communication claire"
             },
             {
-              icon: <Globe2 size={isMobile ? 28 : 32} color="white" />,
+              icon: <Globe2 size={isMobile ? 28 : 40} color="white" />,
               title: "Langues",
               description: "• Français (Natif)\n• Anglais (C1)",
               customStyle: { whiteSpace: 'pre-line' }
             },
             {
-              icon: <Lightbulb size={isMobile ? 28 : 32} color="white" />,
+              icon: <Lightbulb size={isMobile ? 32 : 48} color="white" />,
               title: "Résolution de problèmes",
               description: "Approche analytique et solutions créatives"
             },
             {
-              icon: <Cpu size={isMobile ? 28 : 32} color="white" />,
+              icon: <Kanban size={isMobile ? 32 : 48} color="white" />,
               title: "Adaptabilité",
               description: "Apprentissage rapide des nouvelles technologies"
             }
           ].map((item, index) => (
             <CardContainer key={index} style={{ 
-              flex: isMobile ? 'none' : 1,
+              flex: isMobile ? 'none' : '1',
               width: isMobile ? '100%' : 'auto',
-              maxWidth: isMobile ? '100%' : '220px',
-              minWidth: isMobile ? '0' : '220px',
-              height: isMobile ? '160px' : '220px',
+              maxWidth: isMobile ? '100%' : '320px',
+              minWidth: isMobile ? '0' : '0',
+              height: isMobile ? '160px' : '260px',
               backdropFilter: 'blur(2px)',
             }}>
               <StyledCard style={{ 
@@ -147,14 +152,14 @@ export default function Competence() {
                 </div>
                 <h3 style={{ 
                   color: 'white',
-                  fontSize: isMobile ? '1.1rem' : '1.3rem',
+                  fontSize: isMobile ? '1.1rem' : '1.6rem',
                   marginBottom: isMobile ? '0.3rem' : '0.5rem',
                 }}>
                   {item.title}
                 </h3>
                 <p style={{ 
                   color: 'white',
-                  fontSize: isMobile ? '0.8rem' : '0.9rem',
+                  fontSize: isMobile ? '0.8rem' : '1.2rem',
                   opacity: 0.9,
                   lineHeight: '1.4',
                   ...(item.customStyle || {})
@@ -169,18 +174,21 @@ export default function Competence() {
         <div style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '1.6rem',
+          gap: isMobile ? '1rem' : '6rem',
           justifyContent: 'center',
           width: '100%',
+          maxWidth: '1400px',
+          margin: '0 auto',
         }}>
           {/* Développement */}
           <CardContainer style={{ 
             flex: '1 1 300px',
-            maxWidth: isMobile ? '100%' : '490px',
-            height: isMobile ? 'auto' : 'min(520px, 100vh)',
+            maxWidth: isMobile ? '100%' : '600px',
+            height: isMobile ? 'auto' : 'min(600px, 90vh)',
           }}>
             <StyledCard style={{
-              padding: isMobile ? '1.2rem' : '1.8rem',
+              padding: isMobile ? '1.2rem' : '2rem',
+              height: '100%',
             }}>
               <div style={{
                 display: 'flex',
@@ -196,10 +204,10 @@ export default function Competence() {
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   
                 }}>
-                  <Code2 size={isMobile ? 24 : 28} color="white" />
+                  <Code2 size={isMobile ? 24 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.4rem',
+                    fontSize: isMobile ? '1.2rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Développement
@@ -311,10 +319,10 @@ export default function Competence() {
                   paddingBottom: '0.5rem',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 }}>
-                  <Database size={isMobile ? 24 : 28} color="white" />
+                  <Database size={isMobile ? 24 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.4rem',
+                    fontSize: isMobile ? '1.2rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Base de données
@@ -372,10 +380,12 @@ export default function Competence() {
           {/* Systèmes et Réseaux */}
           <CardContainer style={{ 
             flex: '1 1 300px',
-            maxWidth: isMobile ? '100%' : '490px',
-            height: isMobile ? 'auto' : 'min(520px, 100vh)',          }}>
+            maxWidth: isMobile ? '100%' : '600px',
+            height: isMobile ? 'auto' : 'min(600px, 90vh)',
+          }}>
             <StyledCard style={{
-              padding: isMobile ? '1.2rem' : '1.8rem',
+              padding: isMobile ? '1.2rem' : '2rem',
+              height: '100%',
             }}>
               <div style={{
                 display: 'flex',
@@ -389,10 +399,10 @@ export default function Competence() {
                   paddingBottom: '0.5rem',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 }}>
-                  <Server size={isMobile ? 24 : 28} color="white" />
+                  <Server size={isMobile ? 24 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.4rem',
+                    fontSize: isMobile ? '1.2rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Systèmes et Réseaux
@@ -484,10 +494,10 @@ export default function Competence() {
                   paddingBottom: '0.5rem',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 }}>
-                  <Kanban size={isMobile ? 24 : 28} color="white" />
+                  <Kanban size={isMobile ? 24 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.4rem',
+                    fontSize: isMobile ? '1.2rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Organisation
@@ -539,7 +549,7 @@ export default function Competence() {
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       viewBox="0 0 48 48" 
-                      style={{ width: isMobile ? '2.5rem' : '3rem', height: isMobile ? '2.5rem' : '3rem' }}
+                      style={{ width: isMobile ? '2.5rem' : '4rem', height: isMobile ? '2.5rem' : '4rem' }}
                     >
                       <linearGradient id="zlT103XX9RAwCGfF9JpW0a_3sGOUDo9nJ4k_gr1" x1="32" x2="32" y1="3.947" y2="44.751" gradientUnits="userSpaceOnUse">
                         <stop offset=".006" stopColor="#ebb112"></stop>
@@ -573,7 +583,7 @@ export default function Competence() {
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       viewBox="0 0 48 48" 
-                      style={{ width: isMobile ? '2.5rem' : '3rem', height: isMobile ? '2.5rem' : '3rem' }}
+                      style={{ width: isMobile ? '2.5rem' : '4rem', height: isMobile ? '2.5rem' : '4rem' }}
                     >
                       <rect width="16" height="9" x="28" y="15" fill="#21a366"></rect>
                       <path fill="#185c37" d="M44,24H12v16c0,1.105,0.895,2,2,2h28c1.105,0,2-0.895,2-2V24z"></path>

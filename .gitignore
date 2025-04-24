@@ -1,5 +1,5 @@
 # Dependencies
-node_modules/
+node_modules
 .pnp
 .pnp.js
 
@@ -9,6 +9,7 @@ build/
 
 
 # Public assets
+public/
 
 # Environment files
 .env

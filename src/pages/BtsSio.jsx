@@ -20,7 +20,7 @@ export default function BtsSio() {
         gap: isMobile ? '1rem' : '1.95rem',
         width: '100%',
         height: '100%',
-        maxWidth: '1600px',
+        maxWidth: '1800px',
         margin: '0 auto',
         paddingBottom: isMobile ? '4rem' : '8rem',
       }}>
@@ -28,13 +28,13 @@ export default function BtsSio() {
           display: 'flex',
           justifyContent: 'center',
           width: '100%',
-          maxWidth: '1000px',
+          maxWidth: '1400px',
           margin: '0 auto',
           paddingTop: isMobile ? '2rem' : '4rem',
         }}>
           <CardContainer style={{ 
             flex: 1,
-            maxWidth: '1000px',
+            maxWidth: '1400px',
             minWidth: isMobile ? '300px' : '400px',
             height: 'min(180px, 28vh)',
           }}>
@@ -55,7 +55,7 @@ export default function BtsSio() {
                 <h2 style={{ 
                   color: 'white',
                   margin: 0,
-                  fontSize: isMobile ? '1.2rem' : '1.4rem',
+                  fontSize: isMobile ? '1.2rem' : '1.8rem',
                   textAlign: 'center',
                   borderBottom: '1px solid rgba(255,255,255,0.1)',
                   padding: isMobile ? '0.8rem' : '1rem',
@@ -71,7 +71,7 @@ export default function BtsSio() {
                 <p style={{ 
                   color: 'white',
                   lineHeight: '1.5',
-                  fontSize: isMobile ? '0.8rem' : '0.9rem',
+                  fontSize: isMobile ? '0.8rem' : '1.4rem',
                   textAlign: 'center',
                   maxWidth: '800px',
                   paddingBottom: isMobile ? '0.8rem' : '1rem',
@@ -86,21 +86,22 @@ export default function BtsSio() {
         <div style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '2.5rem',
+          gap: isMobile ? '1rem' : '2rem',
           justifyContent: 'center',
           alignItems: isMobile ? 'stretch' : 'center',
           width: '100%',
-          maxWidth: '1000px',
+          maxWidth: '1400px',
           margin: '0 auto',
           boxShadow: 'none',
+          flexWrap: 'nowrap',
         }}>
           {[1, 2, 3, 4].map((index) => (
             <CardContainer key={index} style={{ 
-              flex: isMobile ? 'none' : 1,
+              flex: isMobile ? 'none' : '1',
               width: isMobile ? '100%' : 'auto',
-              maxWidth: isMobile ? '100%' : '220px',
-              minWidth: isMobile ? '0' : '220px',
-              height: isMobile ? '160px' : '220px',
+              maxWidth: isMobile ? '100%' : '320px',
+              minWidth: isMobile ? '0' : '0',
+              height: isMobile ? '160px' : '240px',
               backdropFilter: 'blur(2px)',
             }}>
               <StyledCard style={{ 
@@ -214,33 +215,33 @@ export default function BtsSio() {
         <div style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '2.5rem',
+          gap: isMobile ? '1rem' : '2rem',
           justifyContent: 'center',
           width: '100%',
-          maxWidth: '1000px',
+          maxWidth: '1400px',
           margin: '0 auto',
         }}>
           <CardContainer style={{ 
             flex: 1,
-            maxWidth: isMobile ? '100%' : '490px',
-            maxHeight: isMobile ? 'auto' : '470px',
+            maxWidth: isMobile ? '100%' : '700px',
+            maxHeight: isMobile ? 'auto' : '700px',
           }}>
             <StyledCard style={{ 
               padding: '1rem',
               height: '100%',
             }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', backgroundColor: 'rgba(20, 20, 20, 0.8)', borderRadius: '10px',padding: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', padding: '1rem' }}>
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                     <Code2 size={28} color="white" />
-                    <h2 style={{ color: 'white', margin: 0, fontSize: '1.4rem', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', width: '90%', margin: '0 auto', gap: '0.5rem' }}>
+                    <h2 style={{ color: 'white', margin: 0, fontSize: '1.8rem', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', width: '90%', margin: '0 auto', gap: '0.5rem' }}>
                       SLAM
                     </h2>
                   </div>
                   <h3 style={{ 
                     color: 'white',
                     marginBottom: '0.5rem',
-                    fontSize: '1rem',
+                    fontSize: '1.5rem',
                     opacity: 0.9,
                   }}>
                     Solutions Logicielles et Applications Métiers
@@ -248,7 +249,7 @@ export default function BtsSio() {
 
                   <p style={{ 
                     color: 'white',
-                    fontSize: '0.8rem',
+                    fontSize: '1.4rem',
                     opacity: 0.9,
                   }}>
                     Spécialisation dans le développement d'applications et la programmation
@@ -259,7 +260,7 @@ export default function BtsSio() {
                   <h3 style={{ 
                     color: 'white',
                     marginBottom: '0.5rem',
-                    fontSize: '1rem',
+                    fontSize: '1.5rem',
                   }}>
                     Compétences clés :
                   </h3>
@@ -268,7 +269,7 @@ export default function BtsSio() {
                     listStyle: 'none',
                     padding: 0,
                     margin: 0,
-                    fontSize: '0.8rem',
+                    fontSize: '1.4rem',
                     opacity: 0.9,
                     display: 'flex',
                     flexDirection: 'column',
@@ -286,7 +287,7 @@ export default function BtsSio() {
                   <h3 style={{ 
                     color: 'white',
                     marginBottom: '0.5rem',
-                    fontSize: '1rem',
+                    fontSize: '1.5rem',
                   }}>
                     Débouchés :
                   </h3>
@@ -295,7 +296,7 @@ export default function BtsSio() {
                     listStyle: 'none',
                     padding: 0,
                     margin: 0,
-                    fontSize: '0.8rem',
+                    fontSize: '1.4rem',
                     opacity: 0.9,
                     display: 'flex',
                     flexDirection: 'column',
@@ -313,25 +314,25 @@ export default function BtsSio() {
 
           <CardContainer style={{ 
             flex: 1,
-            maxWidth: isMobile ? '100%' : '490px',
-            maxHeight: isMobile ? 'auto' : '470px',
+            maxWidth: isMobile ? '100%' : '700px',
+            maxHeight: isMobile ? 'auto' : '700px',
           }}>
             <StyledCard style={{ 
               padding: '1rem',
               height: '100%',
             }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', backgroundColor: 'rgba(20, 20, 20, 0.8)', borderRadius: '10px',padding: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem',padding: '1rem' }}>
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
                     <Server size={28} color="white" />
-                    <h2 style={{ color: 'white', margin: 0, fontSize: '1.4rem', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', width: '90%', margin: '0 auto', gap: '0.5rem' }}>
+                    <h2 style={{ color: 'white', margin: 0, fontSize: '1.8rem', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', width: '90%', margin: '0 auto', gap: '0.5rem' }}>
                       SISR
                     </h2>
                   </div>
                   <h3 style={{ 
                     color: 'white',
                     marginBottom: '0.5rem',
-                    fontSize: '1rem',
+                    fontSize: '1.5rem',
                     opacity: 0.9,
                   }}>
                     Solutions d'Infrastructure, Systèmes et Réseaux
@@ -339,7 +340,7 @@ export default function BtsSio() {
 
                   <p style={{ 
                     color: 'white',
-                    fontSize: '0.8rem',
+                    fontSize: '1.4rem',
                     opacity: 0.9,
                   }}>
                     Spécialisation dans l'administration des systèmes et des réseaux
@@ -350,7 +351,7 @@ export default function BtsSio() {
                   <h3 style={{ 
                     color: 'white',
                     marginBottom: '0.5rem',
-                    fontSize: '1rem',
+                    fontSize: '1.5rem',
                   }}>
                     Compétences clés :
                   </h3>
@@ -359,7 +360,7 @@ export default function BtsSio() {
                     listStyle: 'none',
                     padding: 0,
                     margin: 0,
-                    fontSize: '0.8rem',
+                    fontSize: '1.4rem',
                     opacity: 0.9,
                     display: 'flex',
                     flexDirection: 'column',
@@ -377,7 +378,7 @@ export default function BtsSio() {
                   <h3 style={{ 
                     color: 'white',
                     marginBottom: '0.5rem',
-                    fontSize: '1rem',
+                    fontSize: '1.5rem',
                   }}>
                     Débouchés :
                   </h3>
@@ -386,7 +387,7 @@ export default function BtsSio() {
                     listStyle: 'none',
                     padding: 0,
                     margin: 0,
-                    fontSize: '0.8rem',
+                    fontSize: '1.4rem',
                     opacity: 0.9,
                     display: 'flex',
                     flexDirection: 'column',
