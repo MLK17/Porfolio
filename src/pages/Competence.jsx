@@ -4,12 +4,17 @@ import { Code2, Server, Database, Globe2, Palette, Shield, Kanban, GraduationCap
 
 export default function Competence() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+      setIsLaptop(width > 768 && width <= 1366);
+    };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   useEffect(() => {
@@ -46,8 +51,8 @@ export default function Competence() {
           <CardContainer style={{ 
             flex: 1,
             maxWidth: '1400px',
-            minWidth: isMobile ? '300px' : '400px',
-            height: 'min(180px, 28vh)',
+            minWidth: isMobile ? '300px' : isLaptop ? '350px' : '400px',
+            height: isMobile ? 'min(160px, 25vh)' : isLaptop ? 'min(170px, 26vh)' : 'min(180px, 28vh)',
           }}>
             <StyledCard style={{ 
               padding: 0,
@@ -74,14 +79,14 @@ export default function Competence() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '100%',
-                  gap: '0.5rem',
+                  gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                 }}>
                   Mes Compétences
                 </h2>
                 <p style={{ 
                   color: 'white',
                   lineHeight: '1.5',
-                  fontSize: isMobile ? '0.8rem' : '1.2rem',
+                  fontSize: isMobile ? '0.9rem' : isLaptop ? '1.1rem' : '1.3rem',
                   textAlign: 'center',
                   maxWidth: '800px',
                   margin: 0,
@@ -108,23 +113,23 @@ export default function Competence() {
         }}>
           {[
             {
-              icon: <Users size={isMobile ? 28 : 40} color="white" />,
+              icon: <Users size={isMobile ? 28 : isLaptop ? 34 : 40} color="white" />,
               title: "Travail d'équipe",
               description: "Collaboration efficace et communication claire"
             },
             {
-              icon: <Globe2 size={isMobile ? 28 : 40} color="white" />,
+              icon: <Globe2 size={isMobile ? 28 : isLaptop ? 34 : 40} color="white" />,
               title: "Langues",
               description: "• Français (Natif)\n• Anglais (C1)",
               customStyle: { whiteSpace: 'pre-line' }
             },
             {
-              icon: <Lightbulb size={isMobile ? 32 : 48} color="white" />,
+              icon: <Lightbulb size={isMobile ? 32 : isLaptop ? 38 : 48} color="white" />,
               title: "Résolution de problèmes",
               description: "Approche analytique et solutions créatives"
             },
             {
-              icon: <Kanban size={isMobile ? 32 : 48} color="white" />,
+              icon: <Kanban size={isMobile ? 32 : isLaptop ? 38 : 48} color="white" />,
               title: "Adaptabilité",
               description: "Apprentissage rapide des nouvelles technologies"
             }
@@ -132,19 +137,19 @@ export default function Competence() {
             <CardContainer key={index} style={{ 
               flex: isMobile ? 'none' : '1',
               width: isMobile ? '100%' : 'auto',
-              maxWidth: isMobile ? '100%' : '320px',
+              maxWidth: isMobile ? '100%' : isLaptop ? '280px' : '320px',
               minWidth: isMobile ? '0' : '0',
-              height: isMobile ? '160px' : '260px',
+              height: isMobile ? '160px' : isLaptop ? '200px' : '260px',
               backdropFilter: 'blur(2px)',
             }}>
               <StyledCard style={{ 
-                padding: isMobile ? '0.8rem' : '1rem',
+                padding: isMobile ? '0.8rem' : isLaptop ? '0.9rem' : '1rem',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: isMobile ? '0.5rem' : '1rem',
+                gap: isMobile ? '0.5rem' : isLaptop ? '0.7rem' : '1rem',
                 textAlign: 'center',
               }}>
                 <div style={{ marginBottom: isMobile ? '0.3rem' : '0.5rem' }}>
@@ -152,14 +157,14 @@ export default function Competence() {
                 </div>
                 <h3 style={{ 
                   color: 'white',
-                  fontSize: isMobile ? '1.1rem' : '1.6rem',
-                  marginBottom: isMobile ? '0.3rem' : '0.5rem',
+                  fontSize: isMobile ? '1.1rem' : isLaptop ? '1.3rem' : '1.6rem',
+                  marginBottom: isMobile ? '0.3rem' : isLaptop ? '0.4rem' : '0.5rem',
                 }}>
                   {item.title}
                 </h3>
                 <p style={{ 
                   color: 'white',
-                  fontSize: isMobile ? '0.8rem' : '1.2rem',
+                  fontSize: isMobile ? '0.8rem' : isLaptop ? '1rem' : '1.2rem',
                   opacity: 0.9,
                   lineHeight: '1.4',
                   ...(item.customStyle || {})
@@ -174,7 +179,7 @@ export default function Competence() {
         <div style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '1rem' : '6rem',
+          gap: isMobile ? '1rem' : isLaptop ? '3rem' : '6rem',
           justifyContent: 'center',
           width: '100%',
           maxWidth: '1400px',
@@ -183,11 +188,11 @@ export default function Competence() {
           {/* Développement */}
           <CardContainer style={{ 
             flex: '1 1 300px',
-            maxWidth: isMobile ? '100%' : '600px',
-            height: isMobile ? 'auto' : 'min(600px, 90vh)',
+            maxWidth: isMobile ? '100%' : isLaptop ? '550px' : '600px',
+            height: isMobile ? 'auto' : isLaptop ? 'min(580px, 88vh)' : 'min(600px, 90vh)',
           }}>
             <StyledCard style={{
-              padding: isMobile ? '1.2rem' : '2rem',
+              padding: isMobile ? '1.2rem' : isLaptop ? '1.6rem' : '2rem',
               height: '100%',
             }}>
               <div style={{
@@ -204,10 +209,10 @@ export default function Competence() {
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   
                 }}>
-                  <Code2 size={isMobile ? 24 : 36} color="white" />
+                  <Code2 size={isMobile ? 24 : isLaptop ? 30 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.8rem',
+                    fontSize: isMobile ? '1.2rem' : isLaptop ? '1.4rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Développement
@@ -231,8 +236,8 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
-                    width: isMobile ? '60px' : '70px',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
+                    width: isMobile ? '60px' : isLaptop ? '70px' : '80px',
                   }}>
                     <i className="devicon-html5-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
                     <span style={{ color: 'white', fontSize: isMobile ? '0.7rem' : '0.8rem', textAlign: 'center' }}>HTML/CSS</span>
@@ -241,7 +246,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-javascript-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -251,7 +256,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-react-original colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -261,7 +266,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-php-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -271,7 +276,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-python-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -281,7 +286,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-java-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -291,7 +296,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-swift-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -301,7 +306,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-nextjs-plain" style={{ fontSize: isMobile ? '2.5rem' : '3rem', color: 'white' }}></i>
@@ -319,10 +324,10 @@ export default function Competence() {
                   paddingBottom: '0.5rem',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 }}>
-                  <Database size={isMobile ? 24 : 36} color="white" />
+                  <Database size={isMobile ? 24 : isLaptop ? 30 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.8rem',
+                    fontSize: isMobile ? '1.2rem' : isLaptop ? '1.4rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Base de données
@@ -346,7 +351,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-mysql-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -356,7 +361,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-postgresql-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -366,7 +371,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-mongodb-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -380,11 +385,11 @@ export default function Competence() {
           {/* Systèmes et Réseaux */}
           <CardContainer style={{ 
             flex: '1 1 300px',
-            maxWidth: isMobile ? '100%' : '600px',
-            height: isMobile ? 'auto' : 'min(600px, 90vh)',
+            maxWidth: isMobile ? '100%' : isLaptop ? '550px' : '600px',
+            height: isMobile ? 'auto' : isLaptop ? 'min(580px, 88vh)' : 'min(600px, 90vh)',
           }}>
             <StyledCard style={{
-              padding: isMobile ? '1.2rem' : '2rem',
+              padding: isMobile ? '1.2rem' : isLaptop ? '1.6rem' : '2rem',
               height: '100%',
             }}>
               <div style={{
@@ -399,10 +404,10 @@ export default function Competence() {
                   paddingBottom: '0.5rem',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 }}>
-                  <Server size={isMobile ? 24 : 36} color="white" />
+                  <Server size={isMobile ? 24 : isLaptop ? 30 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.8rem',
+                    fontSize: isMobile ? '1.2rem' : isLaptop ? '1.4rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Systèmes et Réseaux
@@ -427,7 +432,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-bash-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem', color: 'green' }}></i>
@@ -437,7 +442,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-azure-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -447,7 +452,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-powershell-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem', color: '#00a0ff' }}></i>
@@ -457,7 +462,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-pfsense-plain" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -467,7 +472,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-windows8-original colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -477,7 +482,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-azuresqldatabase-plain" style={{ fontSize: isMobile ? '2.5rem' : '3rem', color: '#0078D4' }}></i>
@@ -494,10 +499,10 @@ export default function Competence() {
                   paddingBottom: '0.5rem',
                   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 }}>
-                  <Kanban size={isMobile ? 24 : 36} color="white" />
+                  <Kanban size={isMobile ? 24 : isLaptop ? 30 : 36} color="white" />
                   <h2 style={{ 
                     color: 'white',
-                    fontSize: isMobile ? '1.2rem' : '1.8rem',
+                    fontSize: isMobile ? '1.2rem' : isLaptop ? '1.4rem' : '1.8rem',
                     margin: 0,
                   }}>
                     Organisation
@@ -522,7 +527,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-git-plain colored" style={{ fontSize: isMobile ? '2.5rem' : '3rem' }}></i>
@@ -532,7 +537,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <i className="devicon-github-original" style={{ fontSize: isMobile ? '2.5rem' : '3rem', color: 'white' }}></i>
@@ -543,7 +548,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <svg 
@@ -577,7 +582,7 @@ export default function Competence() {
                     display: 'flex', 
                     flexDirection: 'column',
                     alignItems: 'center', 
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.6rem' : isLaptop ? '0.7rem' : '0.8rem',
                     width: isMobile ? '60px' : '70px',
                   }}>
                     <svg 

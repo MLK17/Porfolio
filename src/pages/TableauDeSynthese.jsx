@@ -5,16 +5,19 @@ import { FileText, Download, FileDown } from 'lucide-react'
 export default function TableauDeSynthese() {
   const pdfUrl = "/BTS SIO-Tableau de synthèse.pdf"
   const [isMobile, setIsMobile] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+      setIsLaptop(width > 768 && width <= 1366);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   const containerStyles = {
@@ -94,31 +97,31 @@ export default function TableauDeSynthese() {
   };
 
   const downloadCardStyles = {
-    padding: '1.5rem',
+    padding: isMobile ? '1rem' : isLaptop ? '1.2rem' : '1.5rem',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: isMobile ? '1rem' : isLaptop ? '1.2rem' : '1.5rem',
     maxHeight: isMobile ? 'none' : 'calc(120vh - 10rem)',
-    width: isMobile ? '100%' : 'max(1200px, 80vh)',
+    width: isMobile ? '100%' : isLaptop ? '95%' : 'max(1200px, 80vh)',
   };
 
   const contentLayoutStyles = {
     display: 'flex',
     flexDirection: isMobile ? 'column' : 'row',
     alignItems: isMobile ? 'stretch' : 'flex-start',
-    gap: isMobile ? '2rem' : '6rem',
+    gap: isMobile ? '2rem' : isLaptop ? '3rem' : '6rem',
     width: '100%',
-    padding: isMobile ? '0.5rem' : '1.5rem',
+    padding: isMobile ? '0.5rem' : isLaptop ? '1rem' : '1.5rem',
   };
 
   const leftSectionStyles = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: isMobile ? '1rem' : isLaptop ? '1.2rem' : '1.5rem',
     flex: isMobile ? '1' : '0 0 auto',
-    width: isMobile ? '100%' : '400px',
+    width: isMobile ? '100%' : isLaptop ? '300px' : '400px',
     borderRight: isMobile ? 'none' : '1px solid rgba(255,255,255,0.1)',
-    paddingRight: isMobile ? '0' : '3rem',
+    paddingRight: isMobile ? '0' : isLaptop ? '1.5rem' : '3rem',
     paddingBottom: isMobile ? '1rem' : '0',
     borderBottom: isMobile ? '1px solid rgba(255,255,255,0.1)' : 'none',
   };
@@ -134,7 +137,7 @@ export default function TableauDeSynthese() {
 
   const headerTitleStyles = {
     color: 'white',
-    fontSize: isMobile ? '0.9rem' : '1.4rem',
+    fontSize: isMobile ? '0.9rem' : isLaptop ? '1.1rem' : '1.4rem',
     margin: 0,
     textShadow: '0 2px 4px rgba(0,0,0,0.3)',
   };
@@ -151,10 +154,10 @@ export default function TableauDeSynthese() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '1.2rem',
+    gap: isMobile ? '0.8rem' : isLaptop ? '1rem' : '1.2rem',
     color: 'white',
     border: '1px solid rgba(255, 255, 255, 0.1)',
-    padding: isMobile ? '2rem 1.5rem' : '2.5rem 2rem',
+    padding: isMobile ? '2rem 1.5rem' : isLaptop ? '2rem 1.8rem' : '2.5rem 2rem',
     backgroundColor: 'rgba(13, 13, 13, 0.8)',
     borderRadius: '16px',
     transition: 'all 0.3s ease',
@@ -166,17 +169,17 @@ export default function TableauDeSynthese() {
   };
 
   const downloadTextStyles = {
-    fontSize: isMobile ? '1rem' : '1.1rem',
-    fontWeight: '500',
+    fontSize: isMobile ? '0.9rem' : isLaptop ? '1rem' : '1.2rem',
+    fontWeight: 500,
     textAlign: 'center',
-    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))',
+    textShadow: '0 2px 4px rgba(0,0,0,0.3)',
     letterSpacing: '0.02em',
   };
 
   const rightSectionStyles = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: isMobile ? '1rem' : isLaptop ? '1.2rem' : '1.5rem',
     flex: 1,
     minWidth: 0,
     width: isMobile ? '100%' : '450px',
@@ -230,7 +233,7 @@ export default function TableauDeSynthese() {
                         e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
                       }}
                     >
-                      <FileDown size={isMobile ? 48 : 64} style={{
+                      <FileDown size={isMobile ? 48 : isLaptop ? 56 : 64} style={{
                         filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))',
                         transition: 'all 0.3s ease',
                       }} />
@@ -252,7 +255,7 @@ export default function TableauDeSynthese() {
                   }}>
                     <h2 style={{ 
                       color: 'white',
-                      fontSize: isMobile ? '0.9rem' : '1.4rem',
+                      fontSize: isMobile ? '0.9rem' : isLaptop ? '1.1rem' : '1.4rem',
                       margin: 0,
                       textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                     }}>
@@ -263,11 +266,11 @@ export default function TableauDeSynthese() {
                   <ul style={{
                     color: 'white',
                     margin: 0,
-                    paddingLeft: '1.5rem',
-                    fontSize: isMobile ? '0.8rem' : '1.2rem',
+                    paddingLeft: isMobile ? '1rem' : isLaptop ? '1.2rem' : '1.5rem',
+                    fontSize: isMobile ? '0.8rem' : isLaptop ? '1rem' : '1.2rem',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '0.5rem',
+                    gap: isMobile ? '0.3rem' : isLaptop ? '0.4rem' : '0.5rem',
                     opacity: 0.9,
                     lineHeight: '1.4',
                   }}>
