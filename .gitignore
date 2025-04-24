@@ -9,7 +9,10 @@ build/
 
 
 # Public assets
-public/
+public/*
+!public/*.jpg
+!public/*.png
+!public/*.pdf
 
 # Environment files
 .env
